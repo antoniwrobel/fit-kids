@@ -1,22 +1,15 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
-
 require("dotenv").config({
   path: `.env`,
 })
 
 const { default: config } = require("gatsby-plugin-config")
 
-console.log(__dirname)
-
 module.exports = {
-  /* Your site config here */
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
