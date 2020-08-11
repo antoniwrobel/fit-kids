@@ -10,18 +10,20 @@ require("dotenv").config({
 
 const { default: config } = require("gatsby-plugin-config")
 
+console.log(__dirname)
+
 module.exports = {
   /* Your site config here */
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `images`,
-    //     path: `${__dirname}/src/images/`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
     {
       resolve: `gatsby-source-datocms`,
       options: {
