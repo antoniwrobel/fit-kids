@@ -25,6 +25,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `slider`,
+        path: `${__dirname}/src/slider`,
+      },
+    },
+    {
       resolve: `gatsby-source-datocms`,
       options: {
         apiToken: config.DATO_API_TOKEN,
