@@ -5,14 +5,14 @@ import { AnchorLink } from "gatsby-plugin-anchor-links"
 import nav from "../images/belka_menu.png"
 import logo from "../images/logo-kidsfit.png"
 
-import * as N from "../styled-components/Nav/styles"
+import "../styles/navbar.css"
 
 const Navbar = () => {
   return (
     <>
-      <N.Img src={nav} alt="navbar background" />
-      <N.Nav>
-        <N.Ul>
+      <img className="navbar-cover" src={nav} alt="navbar background" />
+      <nav>
+        <ul>
           <li>
             <Link to="/">
               <img src={logo} alt="company logo" />
@@ -30,8 +30,8 @@ const Navbar = () => {
           <li>
             <Link to="/kontakt">kontakt</Link>
           </li>
-        </N.Ul>
-      </N.Nav>
+        </ul>
+      </nav>
     </>
   )
 }
