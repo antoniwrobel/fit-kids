@@ -1,16 +1,37 @@
 import React from "react"
-import { graphql } from "gatsby"
 
-export default function Home({ data }) {
-  return <pre>{JSON.stringify(data, null, 4)}</pre>
+import Layout from "./layout"
+
+import * as H from "../styled-components/Home/styles.js"
+
+const HomePage = ({
+  data: {
+    allFile: { nodes: sliderImages },
+  },
+}) => {
+  return (
+    <Layout>
+      <H.Img
+        fluid={sliderImages[7].childImageSharp.fluid}
+        alt="background image"
+        fadeIn
+      />
+    </Layout>
+  )
 }
 
 export const query = graphql`
   {
-    allDatoCmsMenu(filter: { day: { eq: "Poniedziałek" } }) {
+    allFile(filter: { sourceInstanceName: { eq: "slider" } }) {
       nodes {
-        breakfast
+        childImageSharp {
+          fluid(maxWidth: 2000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
       }
     }
   }
 `
+
+export default HomePage

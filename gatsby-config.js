@@ -5,11 +5,20 @@ require("dotenv").config({
 const { default: config } = require("gatsby-plugin-config")
 
 module.exports = {
+  siteMetadata: {
+    title: "Fit kids",
+    description: "Fit kids - catering dietetyczny dla dzieci",
+    url: "https://www.fit-kids.pl",
+    image: "./src/images/logo-kidsfit.png",
+    siteUrl: "https://fit-kids.pl",
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-robots-txt`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -31,13 +40,16 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -100,
+      },
+    },
+    {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: [
-            "Saira Semi Condensed:900,800,700,600,500,400,300,200,100",
-            "Acme",
-          ],
+          families: ["Saira Semi Condensed:900,600,400", "Acme"],
         },
       },
     },
