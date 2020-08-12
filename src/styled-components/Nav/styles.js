@@ -15,10 +15,14 @@ export const Nav = styled.nav`
   margin: 0 auto;
 `
 
-export const Img = styled(Image)`
+export const Img = styled.img`
   margin: 0 auto;
   max-width: 1245px;
   z-index: 1;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
 `
 
 export const Ul = styled.ul`
