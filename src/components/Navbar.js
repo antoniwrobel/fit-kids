@@ -1,16 +1,27 @@
 import React from "react"
 import { Link } from "gatsby"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
-
-import nav from "../images/belka.png"
+import Image from "gatsby-image"
+import { graphql, useStaticQuery } from "gatsby"
 
 import "../styles/navbar.css"
 
+const styles = {
+  margin: "0 auto",
+  maxWidth: "1245px",
+  zIndex: 1,
+  width: "100%",
+  position: "absolute",
+  left: 0,
+  right: 0,
+}
+
 const Navbar = () => {
+  const data = useStaticQuery(query)
+
   return (
     <>
-      <img className="navbar-cover" src={nav} alt="navbar background" />
-
+      <Image fluid={data.file.childImageSharp.fluid} style={styles} />
       <nav>
         <ul>
           <li>
@@ -33,5 +44,17 @@ const Navbar = () => {
     </>
   )
 }
+
+const query = graphql`
+  {
+    file(relativePath: { eq: "belka_menu_logo.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1200) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
 
 export default Navbar

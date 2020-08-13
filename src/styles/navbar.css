@@ -12,17 +12,6 @@ nav {
   margin: 0 auto;
 }
 
-.navbar-cover {
-  margin: 0 auto;
-  max-width: 1245px;
-  z-index: 1;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -175px;
-}
-
 nav ul {
   display: flex;
   height: 100%;
