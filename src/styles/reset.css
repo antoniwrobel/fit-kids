@@ -134,12 +134,8 @@ a:visited {
   color: inherit;
 }
 
-body {
-  background: #333;
-  color: #fff;
-}
-
 h1 {
+  color: #333;
   height: 200px;
   width: 100%;
   display: flex;
