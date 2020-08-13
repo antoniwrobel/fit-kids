@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
-import belkaLogo from "../images/belka_menu_logo.png"
+import logo from "../images/belka_menu_logo.png"
 
 import "../styles/navbar.css"
 
@@ -24,27 +24,22 @@ const pages = [
   { name: "kontakt", slug: "/kontakt" },
 ]
 
+const handleNavPages = ({ anchorLink, name, slug }) => {
+  const Element = anchorLink ? AnchorLink : Link
+
+  return (
+    <li key={slug}>
+      <Element to={slug}>{name}</Element>
+    </li>
+  )
+}
+
 const Navbar = () => {
   return (
     <>
-      <img src={belkaLogo} style={styles} alt="company logo" />
+      <img src={logo} style={styles} alt="company logo" />
       <nav>
-        <ul>
-          {pages.map(({ anchorLink, name, slug }) => {
-            if (anchorLink) {
-              return (
-                <li key={slug}>
-                  <AnchorLink to={slug}>{name}</AnchorLink>
-                </li>
-              )
-            }
-            return (
-              <li key={slug}>
-                <Link to={slug}>{name}</Link>
-              </li>
-            )
-          })}
-        </ul>
+        <ul>{pages.map(handleNavPages)}</ul>
       </nav>
     </>
   )

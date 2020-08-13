@@ -8,10 +8,7 @@ const Swiper = ({ id }) => {
 
   return (
     <H.Wrapper>
-      <H.BackgroundImage
-        fluid={data.allFile.nodes[id].childImageSharp.fluid}
-        fadeIn
-      />
+      <H.BackgroundImage fluid={data.allFile.nodes[id].childImageSharp.fluid} />
     </H.Wrapper>
   )
 }
