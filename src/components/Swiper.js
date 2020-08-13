@@ -15,12 +15,12 @@ const Swiper = () => {
   )
 }
 
-const query = graphql`
+export const query = graphql`
   {
     allFile(filter: { sourceInstanceName: { eq: "slider" } }) {
       nodes {
         childImageSharp {
-          fluid(maxWidth: 1500) {
+          fluid(maxWidth: 2000) {
             ...GatsbyImageSharpFluid
           }
         }

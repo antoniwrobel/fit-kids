@@ -5,7 +5,7 @@ import Layout from "./layout"
 const OfferPage = ({ data }) => {
   return (
     <Layout>
-      <div>Oferta</div>
+      <div>Oferta.</div>
     </Layout>
   )
 }
