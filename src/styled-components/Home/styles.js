@@ -15,3 +15,11 @@ export const BackgroundImage = styled(BackgroundImg)`
   background-repeat: no-reapeat;
   margin: 0 auto;
 `
+
+export const BackgroundImageCustom = styled(BackgroundImg)`
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-reapeat;
+  margin: 0 auto;
+`

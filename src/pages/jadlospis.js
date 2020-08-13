@@ -13,6 +13,7 @@ const MenuPage = ({
   return (
     <Layout>
       <Swiper id={3} />
+      <h1>Jadłospis</h1>
     </Layout>
   )
 }

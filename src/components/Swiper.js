@@ -11,16 +11,23 @@ const colors = {
   5: "#7cb954",
 }
 
-const Swiper = ({ id }) => {
+const Swiper = ({ id, indexPage }) => {
   const data = useStaticQuery(query)
-  console.log(data)
+
+  const imgSrc = indexPage
+    ? data.allFile.nodes[id - 1].childImageSharp.fluid
+    : data.file.childImageSharp.fluid
+
   return (
-    <H.Wrapper bgColor={colors[id]}>
-      <H.BackgroundImage
-        fluid={data.allFile.nodes[id - 1].childImageSharp.fluid}
-        alt="background image"
-      />
-    </H.Wrapper>
+    <>
+      {indexPage ? (
+        <H.Wrapper bgColor={colors[id]}>
+          <H.BackgroundImage fluid={imgSrc} alt="background image" />
+        </H.Wrapper>
+      ) : (
+        <H.BackgroundImageCustom fluid={imgSrc} alt="background image" />
+      )}
+    </>
   )
 }
 
@@ -38,6 +45,13 @@ const query = graphql`
           fluid(maxWidth: 2000, quality: 90, webpQuality: 90) {
             ...GatsbyImageSharpFluid
           }
+        }
+      }
+    }
+    file(relativePath: { eq: "happy-kid.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 2000, quality: 90, webpQuality: 90) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
