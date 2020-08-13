@@ -140,3 +140,9 @@ h1 {
   font-size: 90px;
   font-weight: 900;
 }
+
+@font-face {
+  font-family: Saira Semi Condensed, sans-serif;
+  src: "";
+  display: swap;
+}
