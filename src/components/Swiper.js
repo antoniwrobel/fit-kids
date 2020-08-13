@@ -37,7 +37,7 @@ const query = graphql`
     ) {
       nodes {
         childImageSharp {
-          fluid(maxWidth: 1600, quality: 100, webpQuality: 100) {
+          fluid(maxWidth: 1600) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -45,7 +45,7 @@ const query = graphql`
     }
     file(relativePath: { eq: "happy-kid.png" }) {
       childImageSharp {
-        fluid(maxWidth: 1600, quality: 100, webpQuality: 100) {
+        fluid(maxWidth: 1600) {
           ...GatsbyImageSharpFluid
         }
       }
