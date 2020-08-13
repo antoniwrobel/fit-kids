@@ -27,10 +27,13 @@ li:not(:first-of-type) {
   align-items: center;
   justify-content: center;
   display: flex;
+  text-transform: uppercase;
+}
+
+li a {
   color: #117598;
   font-size: 25px;
   font-weight: 600;
-  text-transform: uppercase;
 }
 
 li:first-of-type {

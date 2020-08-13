@@ -130,10 +130,6 @@ a {
   text-decoration: none;
 }
 
-a:visited {
-  color: inherit;
-}
-
 h1 {
   color: #333;
   height: 200px;
