@@ -6,5 +6,5 @@ export const Img = styled(Image)`
   top: 0;
   height: 100%;
   width: 100%;
-  max-height: 780px;
+  max-height: 782px;
 `
