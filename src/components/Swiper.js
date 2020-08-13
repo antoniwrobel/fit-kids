@@ -13,6 +13,7 @@ const Swiper = ({ indexPage }) => {
     ? data.allFile.nodes[randomId].childImageSharp.fluid
     : data.file.childImageSharp.fluid
 
+  console.log(data)
   return (
     <>
       {indexPage ? (
@@ -37,7 +38,7 @@ const query = graphql`
     ) {
       nodes {
         childImageSharp {
-          fluid(maxWidth: 1600, quality: 90) {
+          fluid(maxWidth: 2500, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
