@@ -3,17 +3,20 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import * as H from "../styled-components/Home/styles"
 
-const Swiper = () => {
+const Swiper = ({ id }) => {
   const data = useStaticQuery(query)
 
   return (
     <H.Wrapper>
-      <H.BackgroundImage fluid={data.allFile.nodes[8].childImageSharp.fluid} />
+      <H.BackgroundImage
+        fluid={data.allFile.nodes[id].childImageSharp.fluid}
+        fadeIn
+      />
     </H.Wrapper>
   )
 }
 
-export const query = graphql`
+const query = graphql`
   {
     allFile(filter: { sourceInstanceName: { eq: "slider" } }) {
       nodes {

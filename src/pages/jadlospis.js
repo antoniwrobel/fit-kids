@@ -1,33 +1,18 @@
-import React, { Fragment } from "react"
+import React from "react"
 
 import Layout from "./layout"
+import Swiper from "../components/Swiper"
 
 const MenuPage = ({
   data: {
     allDatoCmsMenu: { nodes: menu },
   },
 }) => {
+  console.log(menu)
+
   return (
     <Layout>
-      <section>
-        <h1>JADŁOSPIS</h1>
-
-        {menu.map(({ day, breakfast, dinner, tea, date }) => {
-          return (
-            <Fragment key={day}>
-              <strong>
-                {day}:{date}
-              </strong>
-
-              <ul>
-                <li>śniadanie: {breakfast}</li>
-                <li>obiad: {dinner}</li>
-                <li>podwieczorek: {tea}</li>
-              </ul>
-            </Fragment>
-          )
-        })}
-      </section>
+      <Swiper id={4} />
     </Layout>
   )
 }

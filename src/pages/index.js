@@ -6,7 +6,7 @@ import Swiper from "../components/Swiper"
 const HomePage = () => {
   return (
     <Layout>
-      <Swiper />
+      <Swiper id={7} />
     </Layout>
   )
 }

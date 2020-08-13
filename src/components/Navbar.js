@@ -33,13 +33,13 @@ const Navbar = () => {
           {pages.map(({ anchorLink, name, slug }) => {
             if (anchorLink) {
               return (
-                <li>
+                <li key={slug}>
                   <AnchorLink to={slug}>{name}</AnchorLink>
                 </li>
               )
             }
             return (
-              <li>
+              <li key={slug}>
                 <Link to={slug}>{name}</Link>
               </li>
             )
