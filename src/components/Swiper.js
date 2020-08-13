@@ -13,11 +13,12 @@ const colors = {
 
 const Swiper = ({ id }) => {
   const data = useStaticQuery(query)
-
+  console.log(data)
   return (
     <H.Wrapper bgColor={colors[id]}>
       <H.BackgroundImage
         fluid={data.allFile.nodes[id - 1].childImageSharp.fluid}
+        alt="background image"
       />
     </H.Wrapper>
   )
@@ -34,7 +35,7 @@ const query = graphql`
     ) {
       nodes {
         childImageSharp {
-          fluid(maxWidth: 1600, quality: 90) {
+          fluid(maxWidth: 2000, quality: 90, webpQuality: 90) {
             ...GatsbyImageSharpFluid
           }
         }

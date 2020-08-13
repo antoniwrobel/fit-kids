@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import BackgroundImg from "gatsby-background-image"
+import BackgroundImg from "gatsby-image"
 
 export const Wrapper = styled.div`
   width: 100%;
