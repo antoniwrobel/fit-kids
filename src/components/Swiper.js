@@ -20,7 +20,7 @@ export const query = graphql`
     allFile(filter: { sourceInstanceName: { eq: "slider" } }) {
       nodes {
         childImageSharp {
-          fluid(maxWidth: 2000) {
+          fluid(quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
