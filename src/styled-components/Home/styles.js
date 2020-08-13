@@ -1,10 +1,14 @@
 import styled from "styled-components"
-import Image from "gatsby-image"
+import BackgroundImg from "gatsby-background-image"
 
-export const Img = styled(Image)`
-  position: absolute !important;
-  top: 0;
-  height: 100%;
+export const Wrapper = styled.div`
+  margin: 0 auto;
+`
+
+export const BackgroundImage = styled(BackgroundImg)`
   width: 100%;
-  max-height: 782px;
+  height: 782px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-reapeat;
 `

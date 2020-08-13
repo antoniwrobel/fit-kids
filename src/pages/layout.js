@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
     <>
       <SEO />
       <Navbar />
-      {children}
+      <main>{children}</main>
     </>
   )
 }

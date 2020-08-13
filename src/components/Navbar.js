@@ -2,8 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
-import nav from "../images/belka_menu.png"
-import logo from "../images/logo-kidsfit.png"
+import nav from "../images/belka.png"
 
 import "../styles/navbar.css"
 
@@ -11,12 +10,11 @@ const Navbar = () => {
   return (
     <>
       <img className="navbar-cover" src={nav} alt="navbar background" />
+
       <nav>
         <ul>
           <li>
-            <Link to="/">
-              <img src={logo} alt="company logo" />
-            </Link>
+            <Link to="/" />
           </li>
           <li>
             <Link to="/oferta">oferta</Link>

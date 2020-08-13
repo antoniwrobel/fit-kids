@@ -7,11 +7,9 @@ const Swiper = () => {
   const data = useStaticQuery(query)
 
   return (
-    <H.Img
-      fluid={data.allFile.nodes[7].childImageSharp.fluid}
-      alt="background image"
-      fadeIn
-    />
+    <H.Wrapper>
+      <H.BackgroundImage fluid={data.allFile.nodes[8].childImageSharp.fluid} />
+    </H.Wrapper>
   )
 }
 
@@ -20,7 +18,7 @@ export const query = graphql`
     allFile(filter: { sourceInstanceName: { eq: "slider" } }) {
       nodes {
         childImageSharp {
-          fluid(quality: 100) {
+          fluid(maxWidth: 1600, quality: 90) {
             ...GatsbyImageSharpFluid
           }
         }
