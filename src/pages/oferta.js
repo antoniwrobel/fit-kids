@@ -6,7 +6,7 @@ import Swiper from "../components/Swiper"
 const OfferPage = ({ data }) => {
   return (
     <Layout>
-      <Swiper id={9} />
+      <Swiper id={2} />
     </Layout>
   )
 }
