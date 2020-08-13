@@ -19,10 +19,10 @@ const Swiper = ({ indexPage }) => {
     <>
       {indexPage ? (
         <H.Wrapper>
-          <H.BackgroundImage fluid={imgSrc} alt="background image" fadeIn />
+          <H.BackgroundImage fluid={imgSrc} alt="background image" />
         </H.Wrapper>
       ) : (
-        <H.BackgroundImageCustom fluid={imgSrc} alt="background image" fadeIn />
+        <H.BackgroundImageCustom fluid={imgSrc} alt="background image" />
       )}
     </>
   )
