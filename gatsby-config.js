@@ -53,5 +53,30 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-webfonts`,
+      options: {
+        fonts: {
+          google: [
+            {
+              family: "Saira Semi Condensed",
+              variants: ["400", "600", "900"],
+              subsets: ["latin"],
+              text: "Hello",
+              fontDisplay: "swap",
+            },
+            {
+              family: "Acme",
+              variants: ["400", "600", "900"],
+              subsets: ["latin"],
+              text: "Hello",
+              fontDisplay: "swap",
+            },
+          ],
+        },
+        useMinify: true,
+        usePreload: true,
+      },
+    },
   ],
 }
