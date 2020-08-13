@@ -3,25 +3,22 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import * as H from "../styled-components/Home/styles"
 
-const colors = {
-  1: "#fcc630",
-  2: "#8ec1c4",
-  3: "#e44762",
-  4: "#f9ed82",
-  5: "#7cb954",
-}
+const colors = ["#fcc630", "#8ec1c4", "#e44762", "#f9ed82", "#7cb954"]
 
-const Swiper = ({ id, indexPage }) => {
+const Swiper = ({ indexPage }) => {
   const data = useStaticQuery(query)
+  const handleRandomImgId = () => Math.floor(Math.random() * 5)
+
+  const randomId = handleRandomImgId()
 
   const imgSrc = indexPage
-    ? data.allFile.nodes[id - 1].childImageSharp.fluid
+    ? data.allFile.nodes[randomId].childImageSharp.fluid
     : data.file.childImageSharp.fluid
 
   return (
     <>
       {indexPage ? (
-        <H.Wrapper bgColor={colors[id]}>
+        <H.Wrapper bgColor={colors[randomId]}>
           <H.BackgroundImage fluid={imgSrc} alt="background image" />
         </H.Wrapper>
       ) : (
