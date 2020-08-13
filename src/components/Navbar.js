@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
-import Image from "gatsby-image"
-import { graphql, useStaticQuery } from "gatsby"
+
+import belkaLogo from "../images/belka_menu_logo.png"
 
 import "../styles/navbar.css"
 
@@ -16,45 +16,38 @@ const styles = {
   right: 0,
 }
 
-const Navbar = () => {
-  const data = useStaticQuery(query)
+const pages = [
+  { name: "", slug: "/" },
+  { name: "oferta", slug: "/oferta" },
+  { name: "o firmie", slug: "/#o-firmie", anchorLink: true },
+  { name: "jadłospis", slug: "/jadlospis" },
+  { name: "kontakt", slug: "/kontakt" },
+]
 
+const Navbar = () => {
   return (
     <>
-      <Image fluid={data.file.childImageSharp.fluid} style={styles} />
+      <img src={belkaLogo} style={styles} alt="company logo" />
       <nav>
         <ul>
-          <li>
-            <Link to="/" />
-          </li>
-          <li>
-            <Link to="/oferta">oferta</Link>
-          </li>
-          <li>
-            <AnchorLink to="/#o-firmie">o firmie</AnchorLink>
-          </li>
-          <li>
-            <Link to="/jadlospis">jadłospis</Link>
-          </li>
-          <li>
-            <Link to="/kontakt">kontakt</Link>
-          </li>
+          {pages.map(({ anchorLink, name, slug }) => {
+            if (anchorLink) {
+              return (
+                <li>
+                  <AnchorLink to={slug}>{name}</AnchorLink>
+                </li>
+              )
+            }
+            return (
+              <li>
+                <Link to={slug}>{name}</Link>
+              </li>
+            )
+          })}
         </ul>
       </nav>
     </>
   )
 }
-
-const query = graphql`
-  {
-    file(relativePath: { eq: "belka_menu_logo.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 1200) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`
 
 export default Navbar
