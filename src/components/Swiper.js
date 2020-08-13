@@ -1,9 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import * as H from "../styled-components/Home/styles"
-
-// const colors = ["#fcc630", "#8ec1c4", "#e44762", "#f9ed82", "#7cb954"]
+import * as H from "../styled/Home/styles"
 
 const Swiper = ({ indexPage }) => {
   const data = useStaticQuery(query)
