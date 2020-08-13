@@ -1,5 +1,6 @@
 import React from "react"
 
+import SEO from "../components/Seo"
 import Layout from "./layout"
 import Swiper from "../components/Swiper"
 
@@ -12,6 +13,7 @@ const MenuPage = ({
 
   return (
     <Layout>
+      <SEO title="Fitkids | jadłospis" />
       <Swiper id={3} />
       <h1>Jadłospis</h1>
     </Layout>
