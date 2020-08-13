@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import * as H from "../styled-components/Home/styles"
 
-const colors = ["#fcc630", "#8ec1c4", "#e44762", "#f9ed82", "#7cb954"]
+// const colors = ["#fcc630", "#8ec1c4", "#e44762", "#f9ed82", "#7cb954"]
 
 const Swiper = ({ indexPage }) => {
   const data = useStaticQuery(query)
@@ -18,11 +18,11 @@ const Swiper = ({ indexPage }) => {
   return (
     <>
       {indexPage ? (
-        <H.Wrapper bgColor={colors[randomId]}>
-          <H.BackgroundImage fluid={imgSrc} alt="background image" />
+        <H.Wrapper>
+          <H.BackgroundImage fluid={imgSrc} alt="background image" fadeIn />
         </H.Wrapper>
       ) : (
-        <H.BackgroundImageCustom fluid={imgSrc} alt="background image" />
+        <H.BackgroundImageCustom fluid={imgSrc} alt="background image" fadeIn />
       )}
     </>
   )

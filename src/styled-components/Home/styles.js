@@ -3,13 +3,12 @@ import BackgroundImg from "gatsby-image"
 
 export const Wrapper = styled.div`
   width: 100%;
-  background-color: ${({ bgColor }) => bgColor};
 `
 
 export const BackgroundImage = styled(BackgroundImg)`
   width: 100%;
   height: 782px;
-  max-width: 1600px;
+  max-width: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-reapeat;
