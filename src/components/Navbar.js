@@ -3,8 +3,6 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 import Image from "gatsby-image"
 
-// import logo from "../images/belka_menu_logo.png"
-
 import "../styles/navbar.css"
 
 const styles = {
@@ -43,6 +41,7 @@ const Navbar = () => {
         fluid={data.file.childImageSharp.fluid}
         style={styles}
         alt="company logo"
+        fadeIn={false}
       />
       <nav>
         <ul>{pages.map(handleNavPages)}</ul>
@@ -56,7 +55,7 @@ const query = graphql`
     file(relativePath: { eq: "belka_menu_logo.png" }) {
       childImageSharp {
         fluid(maxWidth: 1000, quality: 90) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_noBase64
         }
       }
     }

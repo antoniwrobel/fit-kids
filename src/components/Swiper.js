@@ -13,7 +13,6 @@ const Swiper = ({ indexPage }) => {
     ? data.allFile.nodes[randomId].childImageSharp.fluid
     : data.file.childImageSharp.fluid
 
-  console.log(data)
   return (
     <>
       {indexPage ? (

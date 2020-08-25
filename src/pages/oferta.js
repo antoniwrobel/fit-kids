@@ -2,13 +2,13 @@ import React from "react"
 
 import SEO from "../components/Seo"
 import Layout from "./layout"
-import Swiper from "../components/Swiper"
+import Hero from "../components/Hero"
 
 const OfferPage = () => {
   return (
     <Layout>
       <SEO title="Fitkids | oferta" />
-      <Swiper />
+      <Hero />
       <h1>Oferta</h1>
     </Layout>
   )

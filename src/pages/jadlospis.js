@@ -2,7 +2,7 @@ import React from "react"
 
 import SEO from "../components/Seo"
 import Layout from "./layout"
-import Swiper from "../components/Swiper"
+import Hero from "../components/Hero"
 
 const MenuPage = ({
   data: {
@@ -14,7 +14,7 @@ const MenuPage = ({
   return (
     <Layout>
       <SEO title="Fitkids | jadłospis" />
-      <Swiper id={3} />
+      <Hero />
       <h1>Jadłospis</h1>
     </Layout>
   )
