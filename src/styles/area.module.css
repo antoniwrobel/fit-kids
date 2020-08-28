@@ -9,6 +9,7 @@
   padding: 50px 30px;
   display: flex;
   justify-content: space-between;
+  box-sizing: border-box;
 }
 
 .header {
