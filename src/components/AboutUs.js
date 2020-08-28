@@ -72,7 +72,7 @@ const AboutUs = () => {
 
   console.log(nodes)
   return (
-    <A.Wrapper className={wrapper}>
+    <A.Wrapper className={wrapper} id="o-firmie">
       <A.Header className={header}>Fit Kids - catering dla dzieci</A.Header>
       <A.Articles>
         {articles.map(({ id, title, description, alt }, index) => {
