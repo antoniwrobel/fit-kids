@@ -5,6 +5,7 @@ import SEO from "../components/Seo"
 import Swiper from "../components/Swiper"
 import OurValues from "../components/OurValues"
 import AboutUs from "../components/AboutUs"
+import Area from "../components/Area"
 
 const HomePage = () => {
   return (
@@ -13,6 +14,7 @@ const HomePage = () => {
       <Swiper indexPage />
       <OurValues />
       <AboutUs />
+      <Area />
     </Layout>
   )
 }

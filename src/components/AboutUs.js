@@ -1,23 +1,35 @@
 import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
+import Image from "gatsby-image"
 
 import * as A from "../styled/AboutUs/styles"
+import {
+  wrapper,
+  header,
+  headerSmall,
+  description as desc,
+  content,
+  image,
+  lastContent,
+} from "../styles/aboutUs.module.css"
 
-const PINK = "pink"
-const GREEN = "green"
-const YELLOW = "yellow"
-const BLUE = "blue"
+const PINK = "#f67685"
+const GREEN = "#87bb68"
+const YELLOW = "#dea542"
+const BLUE = "#08abff"
 
 const articles = [
   {
     id: 1,
     title: "",
+    alt: "kids reading",
     description: `Zamujemy się profesjonalnym żywieniem dzieci zarówno
   w wieku przedszkolnym jak i szkolnym. Swoją ofertę kierujemy
   do prywatnych oraz państwowych placówek oświatowych.
   Wszystkie wydawne przez nas posiłki przygotowane są według
   <span style="color:${PINK};">wewnętrznych, rygorystycznych standardów,</span> co pozwala
-  nieprzerwanie zachować ich <span style="color:${GREEN};>najwyższą jakość oraz świeżość.</span>
-  Jesteśmy w stanie przygotować posiłki dla alergików - <span style="color:${PINK};>do każdej 
+  nieprzerwanie zachować ich <span style="color:${GREEN}";>najwyższą jakość oraz świeżość.</span>
+  Jesteśmy w stanie przygotować posiłki dla alergików - <span style="color:${PINK}";>do każdej 
   obsługiwanej placówki podchodzimy indywidualnie.</span> Posiłki 
   dostarczamy w specjalnie przeznaczonych do tego bemarach 
   termicznych, według ustalonego z kierownictwem placówki 
@@ -32,6 +44,7 @@ const articles = [
   {
     id: 2,
     title: "Nasza oferta",
+    alt: "kids having fun",
     description: `Nasza oferta obejmuje dwa pakiety żywienia dostarczane
     codziennie do placówek oświatowych. Naszym klientom dajemy
     do wyboru pakiet dwu lub trzy posiłkowy. <span style="color:${YELLOW};">W przypadku pakietu
@@ -52,17 +65,35 @@ const articles = [
 const createDesc = desc => ({ __html: desc })
 
 const AboutUs = () => {
+  const data = useStaticQuery(query)
+  const {
+    allFile: { nodes },
+  } = data
+
+  console.log(nodes)
   return (
-    <A.Wrapper>
-      <A.Header>Fit Kids - catering dla dzieci</A.Header>
+    <A.Wrapper className={wrapper}>
+      <A.Header className={header}>Fit Kids - catering dla dzieci</A.Header>
       <A.Articles>
-        {articles.map(({ id, title, description }, index) => {
+        {articles.map(({ id, title, description, alt }, index) => {
           return (
             <A.Article key={id}>
-              {title && <A.HeaderSmall>{title}</A.HeaderSmall>}
-              <A.Description
-                dangerouslySetInnerHTML={createDesc(description)}
-              />
+              {title && (
+                <A.HeaderSmall className={headerSmall}>{title}</A.HeaderSmall>
+              )}
+              <A.Content
+                className={`${content} ${index === 1 ? lastContent : null}`}
+              >
+                <A.Description
+                  dangerouslySetInnerHTML={createDesc(description)}
+                  className={desc}
+                />
+                <Image
+                  fluid={nodes[index].childImageSharp.fluid}
+                  alt={alt}
+                  className={image}
+                />
+              </A.Content>
             </A.Article>
           )
         })}
@@ -70,5 +101,20 @@ const AboutUs = () => {
     </A.Wrapper>
   )
 }
+
+const query = graphql`
+  {
+    allFile(filter: { dir: { regex: "/aboutUs/" } }, sort: { fields: name }) {
+      nodes {
+        childImageSharp {
+          fluid(maxWidth: 550) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+        id
+      }
+    }
+  }
+`
 
 export default AboutUs

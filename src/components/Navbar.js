@@ -1,9 +1,10 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
+
 import Image from "gatsby-image"
 
-import "../styles/navbar.css"
+import { navbar, list, listItem, listHref } from "../styles/navbar.module.css"
 
 const styles = {
   margin: "0 auto",
@@ -27,8 +28,10 @@ const handleNavPages = ({ anchorLink, name, slug }) => {
   const Element = anchorLink ? AnchorLink : Link
 
   return (
-    <li key={slug}>
-      <Element to={slug}>{name}</Element>
+    <li key={slug} className={listItem}>
+      <Element to={slug} className={listHref}>
+        {name}
+      </Element>
     </li>
   )
 }
@@ -43,8 +46,8 @@ const Navbar = () => {
         alt="company logo"
         fadeIn={false}
       />
-      <nav>
-        <ul>{pages.map(handleNavPages)}</ul>
+      <nav className={navbar}>
+        <ul className={list}>{pages.map(handleNavPages)}</ul>
       </nav>
     </>
   )

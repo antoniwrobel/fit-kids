@@ -1,0 +1,46 @@
+.wrapper {
+  max-width: 1200px;
+  margin: -95px auto 0;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.header {
+  font-size: 62px;
+  font-weight: 700;
+  letter-spacing: -1.48px;
+  color: #3b3b3b;
+}
+
+.headerSmall {
+  color: #504f4f;
+  font-family: "Saira Semi Condensed";
+  font-size: 40px;
+  font-weight: 700;
+  max-width: calc(50% - 50px);
+  width: 100%;
+}
+
+.description {
+  line-height: 29px;
+  font-size: 20px;
+  color: #3b3b3b;
+  max-width: calc(50% - 50px);
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 50px 0;
+  align-items: center;
+}
+
+.image {
+  width: 50%;
+}
+
+.lastContent {
+  flex-direction: row-reverse;
+  margin-top: 0;
+}
