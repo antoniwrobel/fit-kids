@@ -2,6 +2,12 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
 import * as O from "../styled/OurValues/styles"
+import {
+  wrapper,
+  card,
+  cardHeader,
+  cardDesc,
+} from "../styles/ourValues.module.css"
 
 const cards = [
   {
@@ -34,10 +40,10 @@ const OurValues = () => {
   } = data
 
   return (
-    <O.Wrapper>
+    <O.Wrapper className={wrapper}>
       {cards.map(({ title, borderColor, color, desc }, index) => {
         return (
-          <O.Card key={nodes[index].id}>
+          <O.Card key={nodes[index].id} className={card}>
             <O.BackgroundImage
               fixed={nodes[index].childImageSharp.fixed}
               alt={title}
@@ -45,9 +51,10 @@ const OurValues = () => {
             />
             <O.CardHearder
               color={color}
+              className={cardHeader}
               dangerouslySetInnerHTML={createTitle(title)}
             />
-            <O.CardDesc>{desc}</O.CardDesc>
+            <O.CardDesc className={cardDesc}>{desc}</O.CardDesc>
           </O.Card>
         )
       })}
