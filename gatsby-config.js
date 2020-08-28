@@ -30,7 +30,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `slider`,
-        path: `${__dirname}/src/slider`,
+        path: `${__dirname}/src/images/slider`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `ourValues`,
+        path: `${__dirname}/src/images/ourValues`,
       },
     },
     {

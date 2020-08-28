@@ -30,7 +30,7 @@ const query = graphql`
   {
     allFile(
       filter: {
-        sourceInstanceName: { eq: "slider" }
+        dir: { regex: "/slider/" }
         relativePath: { regex: "/desktop/" }
       }
       sort: { fields: relativePath }
