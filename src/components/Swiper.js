@@ -1,11 +1,30 @@
-import React from "react"
+import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
+import SwiperElement from "react-id-swiper"
+
 import * as H from "../styled/Home/styles"
+
+const params = {
+  containerClass: "swiper-container hero-slider",
+  parallax: true,
+  centeredSlides: true,
+  speed: 600,
+  spaceBetween: 0,
+  effect: "slide",
+  parallaxEl: {
+    el: ".parallax-bg",
+    value: "-23%",
+  },
+}
 
 const Swiper = ({ indexPage }) => {
   const data = useStaticQuery(query)
   const handleRandomImgId = () => Math.floor(Math.random() * 5)
+
+  const [parallaxSwiper, setParallaxSwiper] = useState(null)
+  const parallaxAmount = parallaxSwiper ? parallaxSwiper.width * 0.95 : 0
+  const parallaxOpacity = 0.5
 
   const randomId = handleRandomImgId()
 
@@ -17,7 +36,37 @@ const Swiper = ({ indexPage }) => {
     <>
       {indexPage ? (
         <H.Wrapper>
-          <H.BackgroundImage fluid={imgSrc} alt="background image" />
+          <SwiperElement {...params} getSwiper={setParallaxSwiper}>
+            {data.allFile.nodes.map((node, index) => {
+              return (
+                <H.HeroSlider className="hero-slide" key={index}>
+                  <H.SlideImg
+                    data-swiper-parallax={parallaxAmount}
+                    data-swiper-parallax-opacity={parallaxOpacity}
+                    className="slide-image"
+                  >
+                    <H.BackgroundImageCustom
+                      fluid={node.childImageSharp.fluid}
+                      alt="background image"
+                      className="parallax-bg"
+                    />
+                  </H.SlideImg>
+
+                  <H.Content>
+                    <H.Headers>
+                      <H.Header>Gwarancja</H.Header>
+                      <H.HeaderSmall>satysfakcji</H.HeaderSmall>
+                    </H.Headers>
+
+                    <H.Paragraph>
+                      Gwarantujemy pełną satysfkację z naszych usług, popartą
+                      doświadczeniem oraz kompetencjami.
+                    </H.Paragraph>
+                  </H.Content>
+                </H.HeroSlider>
+              )
+            })}
+          </SwiperElement>
         </H.Wrapper>
       ) : (
         <H.BackgroundImageCustom fluid={imgSrc} alt="background image" />

@@ -4,7 +4,13 @@ import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 import Image from "gatsby-image"
 
-import { navbar, list, listItem, listHref } from "../styles/navbar.module.css"
+import {
+  navbar,
+  list,
+  listItem,
+  listHref,
+  image,
+} from "../styles/navbar.module.css"
 
 const styles = {
   margin: "0 auto",
@@ -41,6 +47,7 @@ const Navbar = () => {
   return (
     <>
       <Image
+        className={image}
         fluid={data.file.childImageSharp.fluid}
         style={styles}
         alt="company logo"
