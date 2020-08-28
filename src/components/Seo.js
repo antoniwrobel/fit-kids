@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet"
 import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
 
-const SEO = ({ title, description, image }) => {
+const SEO = ({ title, description, image, swiper }) => {
   const { pathname } = useLocation()
   const { site } = useStaticQuery(query)
 
@@ -37,6 +37,12 @@ const SEO = ({ title, description, image }) => {
       {seo.title && <meta name="twitter:title" content={seo.title} />}
       {seo.description && (
         <meta name="twitter:description" content={seo.description} />
+      )}
+      {swiper && (
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.min.css"
+        ></link>
       )}
     </Helmet>
     //  highlight-end

@@ -140,3 +140,12 @@ h1 {
   font-size: 90px;
   font-weight: 900;
 }
+
+.swiper-container {
+  width: 100%;
+}
+
+.swiper-wrapper {
+  display: flex;
+  justify-content: space-between;
+}

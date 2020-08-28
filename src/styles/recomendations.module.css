@@ -1,0 +1,63 @@
+.wrapper {
+  width: 100%;
+  padding: 30px 50px;
+  box-sizing: border-box;
+  position: relative;
+  top: -95px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* min-height: 300px; */
+  z-index: 999;
+}
+
+.card {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.swiper {
+  width: 100%;
+  display: flex;
+}
+
+.name {
+  font-size: 24px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 150px;
+}
+
+.small {
+  color: #9d9b9b;
+  font-size: 15px;
+  margin: 5px 0 10px;
+  letter-spacing: -0.72px;
+}
+
+.image {
+  width: 20px;
+  margin-right: 2px;
+}
+
+.hearts {
+  display: flex;
+}
+
+.desc {
+  color: #545454;
+  margin-top: 20px;
+  font-style: italic;
+  line-height: 20px;
+}
