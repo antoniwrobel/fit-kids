@@ -149,3 +149,19 @@ h1 {
   display: flex;
   justify-content: space-between;
 }
+
+main .swiper-button-prev {
+  background-image: url(../images/left-arrow.png) !important;
+  width: 51px;
+  background-size: auto;
+  height: 51px;
+  left: 15%;
+}
+
+main .swiper-button-next {
+  background-image: url(../images/right-arrow.png) !important;
+  width: 51px;
+  background-size: auto;
+  height: 51px;
+  right: 15%;
+}

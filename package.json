@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "fit-kids",
   "private": true,
   "description": "A simplified bare-bones starter for Gatsby",
   "version": "0.1.0",
@@ -36,7 +36,7 @@
     "react-helmet": "^6.1.0",
     "react-id-swiper": "^4.0.0",
     "styled-components": "^5.1.1",
-    "swiper": "^6.1.2"
+    "swiper": "^4.4.1"
   },
   "devDependencies": {
     "prettier": "2.0.5"

@@ -41,7 +41,7 @@ const SEO = ({ title, description, image, swiper }) => {
       {swiper && (
         <link
           rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.min.css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css"
         ></link>
       )}
     </Helmet>

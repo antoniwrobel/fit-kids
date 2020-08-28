@@ -10,11 +10,13 @@ const params = {
   parallax: true,
   centeredSlides: true,
   speed: 600,
-  spaceBetween: 0,
-  effect: "slide",
-  parallaxEl: {
-    el: ".parallax-bg",
-    value: "-23%",
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
   },
 }
 
