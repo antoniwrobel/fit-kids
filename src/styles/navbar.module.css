@@ -20,10 +20,12 @@
   width: 90%;
   margin: 0 auto;
   z-index: 1;
+  padding-right: 50px;
+  box-sizing: border-box;
 }
 
 .list li:not(:first-of-type) {
-  width: 15%;
+  width: calc(15% - 10px);
   align-items: center;
   justify-content: center;
   display: flex;
