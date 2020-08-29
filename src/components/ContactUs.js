@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { navigate } from "gatsby-link"
+import Recaptcha from "react-recaptcha"
 
 import * as C from "../styled/ContactUs/styles"
 import {
@@ -24,6 +25,7 @@ function encode(data) {
 
 const ContactUs = () => {
   const [state, setState] = useState({})
+  const [valid, setValid] = useState(false)
 
   const handleChange = e => {
     setState({ ...state, [e.target.name]: e.target.value })
@@ -32,6 +34,10 @@ const ContactUs = () => {
   const handleSubmit = e => {
     e.preventDefault()
     const form = e.target
+
+    if (!valid) {
+      return alert("Zaakceptuj reCaptcha")
+    }
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -42,6 +48,12 @@ const ContactUs = () => {
     })
       .then(() => navigate(form.getAttribute("action")))
       .catch(error => alert(error))
+  }
+
+  const verifyCallback = response => {
+    if (response) {
+      setValid(true)
+    }
   }
 
   const data = useStaticQuery(query)
@@ -101,7 +113,14 @@ const ContactUs = () => {
               onChange={handleChange}
             />
           </C.InputWrap>
-          <C.Hidden data-netlify-recaptcha="true" className={hidden} />
+          <input data-netlify-recaptcha="true" className={hidden} hidden />
+
+          <Recaptcha
+            sitekey="6LdFBMUZAAAAALqGCHnfE4VsOXYnBIhGAuIcOGeP"
+            render="explicit"
+            verifyCallback={verifyCallback}
+          />
+
           <C.Button type="submit" className={button}>
             Wyślij
           </C.Button>

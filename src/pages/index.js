@@ -13,7 +13,7 @@ import ContactUs from "../components/ContactUs"
 const HomePage = () => {
   return (
     <Layout>
-      <SEO title="Fitkids | catering dla dzieci" swiper />
+      <SEO title="Fitkids | catering dla dzieci" swiper captcha />
       <Swiper />
       <OurValues />
       <AboutUs />

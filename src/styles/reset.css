@@ -197,3 +197,9 @@ main .swiper-button-next::after {
   max-height: 270px;
   max-width: 400px;
 }
+
+#g-recaptcha {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
