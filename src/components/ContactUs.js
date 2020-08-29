@@ -68,7 +68,6 @@ const ContactUs = () => {
           method="POST"
           netlify
           action="/dziekujemy/"
-          // data-netlify-honeypot="bot-field"
           className={form}
           onSubmit={handleSubmit}
         >
@@ -116,11 +115,11 @@ const ContactUs = () => {
           </C.InputWrap>
           <input data-netlify-recaptcha="true" className={hidden} hidden />
 
-          <Recaptcha
+          {/* <Recaptcha
             sitekey="6LdFBMUZAAAAALqGCHnfE4VsOXYnBIhGAuIcOGeP"
             render="explicit"
             verifyCallback={verifyCallback}
-          />
+          /> */}
 
           <C.Button type="submit" className={button}>
             Wyślij
