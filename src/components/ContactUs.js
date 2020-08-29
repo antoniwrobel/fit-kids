@@ -1,0 +1,126 @@
+import React, { useState } from "react"
+import { graphql, useStaticQuery } from "gatsby"
+import { navigate } from "gatsby-link"
+
+import * as C from "../styled/ContactUs/styles"
+import {
+  wrapper,
+  header,
+  container,
+  form,
+  inputWrap,
+  textareaWrap,
+  textarea,
+  inputs,
+  hidden,
+  button,
+} from "../styles/contactUs.module.css"
+
+function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&")
+}
+
+const ContactUs = () => {
+  const [state, setState] = useState({})
+
+  const handleChange = e => {
+    setState({ ...state, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    const form = e.target
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": form.getAttribute("name"),
+        ...state,
+      }),
+    })
+      .then(() => navigate(form.getAttribute("action")))
+      .catch(error => alert(error))
+  }
+
+  const data = useStaticQuery(query)
+
+  return (
+    <C.Wrapper className={wrapper} bg={data.file.childImageSharp.fluid.src}>
+      <C.Container className={container}>
+        <C.Header className={header}>Skontaktuj się z nami</C.Header>
+        <C.Form
+          name="contact"
+          data-netlify="true"
+          method="POST"
+          action="/dziekujemy/"
+          data-netlify-honeypot="bot-field"
+          className={form}
+          onSubmit={handleSubmit}
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <p hidden>
+            <label>
+              Don’t fill this out:
+              <input name="bot-field" onChange={handleChange} />
+            </label>
+          </p>
+
+          <C.Inputs className={inputs}>
+            <C.InputWrap className={inputWrap}>
+              <label htmlFor="name">Imię i nazwisko:</label>
+              <input type="text" name="name" required onChange={handleChange} />
+            </C.InputWrap>
+            <C.InputWrap className={inputWrap}>
+              <label htmlFor="company">Nazwa firmy:</label>
+              <input
+                type="input"
+                name="company"
+                required
+                onChange={handleChange}
+              />
+            </C.InputWrap>
+            <C.InputWrap className={inputWrap}>
+              <label htmlFor="email">Adres email:</label>
+              <input
+                type="email"
+                name="email"
+                required
+                onChange={handleChange}
+              />
+            </C.InputWrap>
+          </C.Inputs>
+          <C.InputWrap className={`${inputWrap} ${textareaWrap}`}>
+            <label htmlFor="message">Treść zapytania:</label>
+            <textarea
+              type="text"
+              name="message"
+              required
+              className={textarea}
+              onChange={handleChange}
+            />
+          </C.InputWrap>
+          <C.Hidden data-netlify-recaptcha="true" className={hidden} />
+          <C.Button type="submit" className={button}>
+            Wyślij
+          </C.Button>
+        </C.Form>
+      </C.Container>
+    </C.Wrapper>
+  )
+}
+
+const query = graphql`
+  {
+    file(relativePath: { regex: "/bg_pattern_kontakt/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
+
+export default ContactUs
