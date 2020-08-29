@@ -68,7 +68,7 @@ const ContactUs = () => {
           method="POST"
           netlify
           action="/dziekujemy/"
-          data-netlify-honeypot="bot-field"
+          // data-netlify-honeypot="bot-field"
           className={form}
           onSubmit={handleSubmit}
         >
