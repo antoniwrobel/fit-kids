@@ -20,17 +20,12 @@ const params = {
     modifier: 1,
     slideShadows: false,
   },
-  // pagination: {
-  //   el: ".swiper-pagination",
-  // },
 }
 
 const Gallery = () => {
   const {
     allFile: { nodes },
   } = useStaticQuery(query)
-
-  console.log(nodes)
 
   return (
     <G.Wrapper className={wrapper}>
@@ -55,7 +50,7 @@ const query = graphql`
     allFile(filter: { dir: { regex: "/gallery/" } }) {
       nodes {
         childImageSharp {
-          fluid(maxHeight: 700, maxWidth: 1100) {
+          fluid(maxWidth: 270) {
             ...GatsbyImageSharpFluid
           }
         }
