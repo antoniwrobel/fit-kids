@@ -26,19 +26,17 @@ const Swiper = ({ indexPage }) => {
       <SwiperElement {...params}>
         {data.allFile.nodes.map((node, index) => {
           return (
-            <H.HeroSlider className="hero-slide" key={index}>
-              <H.SlideImg>
-                <H.BackgroundImageCustom
-                  fluid={node.childImageSharp.fluid}
-                  alt="background image"
-                  indexPage
-                />
-              </H.SlideImg>
+            <H.HeroSlider key={index}>
+              <H.BackgroundImageCustom
+                fluid={node.childImageSharp.fluid}
+                alt="background image"
+                indexPage
+              />
 
               <H.Content className={content}>
                 <H.Headers>
                   <H.Header>Gwarancja</H.Header>
-                  <H.HeaderSmall>satysfakcji</H.HeaderSmall>
+                  <H.Header small>satysfakcji</H.Header>
                 </H.Headers>
 
                 <H.Paragraph>
