@@ -55,7 +55,7 @@ const query = graphql`
     allFile(filter: { dir: { regex: "/gallery/" } }) {
       nodes {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 270) {
             ...GatsbyImageSharpFluid
           }
         }
