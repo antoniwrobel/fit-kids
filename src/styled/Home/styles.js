@@ -33,6 +33,7 @@ export const BackgroundImageCustom = styled(Image)`
   background-position: center;
   background-repeat: no-reapeat;
   margin: 0 auto;
+  min-height: 780px;
 `
 
 export const Content = styled.div``
