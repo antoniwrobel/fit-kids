@@ -1,14 +1,18 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+
+import { graphql, useStaticQuery } from "gatsby"
 
 import * as H from "../styled/Home/styles"
 
-const Hero = ({ indexPage }) => {
+const Hero = () => {
   const data = useStaticQuery(query)
 
-  const imgSrc = data.file.childImageSharp.fluid
-
-  return <H.BackgroundImageCustom fluid={imgSrc} alt="background image" />
+  return (
+    <H.BackgroundImage
+      fluid={data.file.childImageSharp.fluid}
+      alt="background image"
+    />
+  )
 }
 
 const query = graphql`

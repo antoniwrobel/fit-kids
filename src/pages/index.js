@@ -13,7 +13,7 @@ const HomePage = () => {
   return (
     <Layout>
       <SEO title="Fitkids | catering dla dzieci" swiper />
-      <Swiper indexPage />
+      <Swiper />
       <OurValues />
       <AboutUs />
       <Area />

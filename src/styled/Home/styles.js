@@ -1,13 +1,13 @@
 import styled from "styled-components"
-import BackgroundImg from "gatsby-image"
+import Image from "gatsby-image"
 
 export const Wrapper = styled.div`
   width: 100%;
 `
 
-export const BackgroundImage = styled(BackgroundImg)`
+export const BackgroundImage = styled(Image)`
   width: 100%;
-  height: 782px;
+  height: ${({ indexPage }) => (indexPage ? "782px" : "450px")};
   max-width: 100%;
   background-size: cover;
   background-position: center;
@@ -46,7 +46,7 @@ export const HeaderSmall = styled.h3`
   font-weight: 400;
 `
 
-export const BackgroundImageCustom = styled(BackgroundImg)`
+export const BackgroundImageCustom = styled(Image)`
   width: 100%;
   background-size: cover;
   background-position: center;
