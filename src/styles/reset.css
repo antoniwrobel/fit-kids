@@ -184,4 +184,5 @@ main .swiper-button-next::after {
   border-radius: 10px;
   box-shadow: 0 0 10px 0;
   max-height: 270px;
+  max-width: 400px;
 }
