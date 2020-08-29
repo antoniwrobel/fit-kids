@@ -54,16 +54,7 @@ export const BackgroundImageCustom = styled(Image)`
   margin: 0 auto;
 `
 
-export const Content = styled.div`
-  position: absolute;
-  top: 255px;
-  display: flex;
-  flex-direction: column;
-  max-width: 350px;
-  left: 0;
-  right: 35%;
-  margin: 0 auto;
-`
+export const Content = styled.div``
 
 export const Header = styled.h1`
   font-family: Acme;

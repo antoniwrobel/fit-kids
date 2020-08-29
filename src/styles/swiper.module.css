@@ -1,0 +1,10 @@
+.content {
+  position: absolute;
+  top: 255px;
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+  left: 0;
+  right: 35%;
+  margin: 0 auto;
+}

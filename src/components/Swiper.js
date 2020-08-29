@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import SwiperElement from "react-id-swiper"
 
+import { content } from "../styles/swiper.module.css"
 import * as H from "../styled/Home/styles"
 
 const params = {
@@ -34,7 +35,7 @@ const Swiper = ({ indexPage }) => {
                 />
               </H.SlideImg>
 
-              <H.Content>
+              <H.Content className={content}>
                 <H.Headers>
                   <H.Header>Gwarancja</H.Header>
                   <H.HeaderSmall>satysfakcji</H.HeaderSmall>
