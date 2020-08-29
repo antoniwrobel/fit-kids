@@ -15,7 +15,9 @@ export const BackgroundImage = styled(Image)`
   margin: 0 auto;
 `
 
-export const HeroSlider = styled.div``
+export const HeroSlider = styled.div`
+  min-height: 780px !important;
+`
 
 export const Headers = styled.div``
 
