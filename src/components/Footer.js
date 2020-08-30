@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { graphql, useStaticQuery } from "gatsby"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 import * as F from "../styled/Footer/styles"
 import {
@@ -33,18 +34,18 @@ const Footer = () => {
           <F.Column className={column}>
             <h4>Informacje</h4>
             <div>
-              <a href="#">Regulamin</a>
-              <a href="#">Polityka prywatności</a>
+              <a href="/regulation">Regulamin</a>
+              <a href="/policy">Polityka prywatności</a>
             </div>
           </F.Column>
           <F.Column className={column}>
             <h4>Nawigacja</h4>
             <div>
-              <Link to="#">Oferta</Link>
-              <Link to="#">O firmie</Link>
-              <Link to="#">Obszar działania</Link>
-              <Link to="#">Galeria</Link>
-              <Link to="#">Kontakt</Link>
+              <Link to="/oferta">Oferta</Link>
+              <AnchorLink to="#o-firmie">O firmie</AnchorLink>
+              <AnchorLink to="#area">Obszar działania</AnchorLink>
+              <AnchorLink to="#gallery">Galeria</AnchorLink>
+              <Link to="/kontakt">Kontakt</Link>
             </div>
           </F.Column>
           <F.Column className={column} custom>

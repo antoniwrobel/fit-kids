@@ -1,0 +1,14 @@
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 55px;
+  padding: 40px 0;
+  border-bottom: 3px solid #efeeee;
+}
+
+.wrapper h2 {
+  color: #3b3b3b;
+  font-size: 62px;
+  font-family: "Saira Semi Condensed";
+  font-weight: 700;
+}

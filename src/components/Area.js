@@ -55,7 +55,7 @@ const Area = () => {
   const { file } = data
 
   return (
-    <A.Wrapper className={wrapper}>
+    <A.Wrapper className={wrapper} id="area">
       <A.ButtonSection className={buttonSection}>
         <span>Sprawdz naszą ofertę:</span>
         <div>

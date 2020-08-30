@@ -32,7 +32,7 @@ const Gallery = () => {
   } = useStaticQuery(query)
 
   return (
-    <G.Wrapper className={wrapper}>
+    <G.Wrapper className={wrapper} id="gallery">
       <G.Container className={container}>
         <G.Header className={header}>Galeria naszych posiłków</G.Header>
         <SimpleReactLightbox>
