@@ -29,7 +29,6 @@ const MenuPage = ({
     allDatoCmsMenu: { nodes },
   },
 }) => {
-  console.log(nodes)
   return (
     <Layout>
       <SEO title="Fitkids | jadłospis" />
