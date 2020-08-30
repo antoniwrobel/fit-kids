@@ -66,7 +66,7 @@ const query = graphql`
     ) {
       nodes {
         childImageSharp {
-          fluid(maxWidth: 2500, quality: 100) {
+          fluid(maxWidth: 2500, quality: 80) {
             ...GatsbyImageSharpFluid
           }
         }
