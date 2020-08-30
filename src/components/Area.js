@@ -14,6 +14,7 @@ import {
   buttonSection,
   button,
 } from "../styles/area.module.css"
+
 import * as A from "../styled/Area/styles"
 
 const paragraphs = [

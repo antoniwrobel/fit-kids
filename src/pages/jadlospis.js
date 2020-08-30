@@ -5,6 +5,7 @@ import SEO from "../components/Seo"
 import Layout from "./layout"
 import Hero from "../components/Hero"
 
+import Area from "../components/Area"
 import Contact from "../components/ContactUs"
 import Footer from "../components/Footer"
 
@@ -72,6 +73,7 @@ const MenuPage = ({
       </J.Wrapper>
 
       <Contact title="Formularz kontaktowy" fromMenuPage />
+      <Area fromOffer />
       <Footer />
     </Layout>
   )
