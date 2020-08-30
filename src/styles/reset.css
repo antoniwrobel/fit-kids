@@ -185,6 +185,7 @@ main .swiper-button-next::after {
   min-height: 450px;
   display: flex;
   align-items: center;
+  overflow: hidden;
 }
 
 .gallery-swiper .swiper-slide {
