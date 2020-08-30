@@ -12,7 +12,7 @@ import Footer from "../components/Footer"
 
 import PackageOptions from "../components/PackageOptions"
 import * as O from "../styled/Offer/styles"
-import { wrapper } from "../styles/offer.module.css"
+import { wrapper, desc as descClass } from "../styles/offer.module.css"
 
 const YELLOW = "#dea542"
 const BLUE = "#08abff"
@@ -47,7 +47,7 @@ const OfferPage = () => {
               <O.Desc
                 key={id}
                 dangerouslySetInnerHTML={createDesc(desc)}
-                className={desc}
+                className={descClass}
               />
             )
           })}

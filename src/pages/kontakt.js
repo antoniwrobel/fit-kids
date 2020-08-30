@@ -8,7 +8,12 @@ import Contact from "../components/ContactUs"
 import Footer from "../components/Footer"
 
 import * as K from "../styled/Offer/styles"
-import { wrapper, details, detail } from "../styles/offer.module.css"
+import {
+  wrapper,
+  details,
+  detail,
+  desc as descClass,
+} from "../styles/offer.module.css"
 
 const description = [
   {
@@ -40,7 +45,11 @@ const ContactPage = () => {
         <K.Descriptions>
           {description.map(({ id, desc }) => {
             return (
-              <K.Desc key={id} dangerouslySetInnerHTML={createDesc(desc)} />
+              <K.Desc
+                key={id}
+                dangerouslySetInnerHTML={createDesc(desc)}
+                className={descClass}
+              />
             )
           })}
         </K.Descriptions>
