@@ -6,7 +6,9 @@ export const Wrapper = styled.div`
     background-size: cover;
   }
 `
-export const Header = styled.h2``
+export const Header = styled.h2`
+  font-size: ${({ fontSize }) => fontSize}px;
+`
 
 export const Container = styled.div``
 

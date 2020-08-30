@@ -2,8 +2,9 @@
   max-width: 1200px;
   margin: 0 auto;
   min-height: 55px;
-  padding: 40px 0;
+  padding: 40px 30px;
   border-bottom: 3px solid #efeeee;
+  box-sizing: border-box;
 }
 
 .wrapper h2 {
@@ -30,4 +31,28 @@
 
 .detail div {
   margin: 20px 0;
+}
+
+.item {
+  margin: 20px 0;
+}
+
+.item li {
+  line-height: 22px;
+}
+
+.item strong {
+  min-width: 110px;
+  display: inline-block;
+}
+
+.dayClass {
+  color: #207688;
+  font-size: 28px;
+  margin-right: 10px;
+  font-weight: 600;
+}
+
+.dateClass {
+  font-size: 28px;
 }

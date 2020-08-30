@@ -23,7 +23,8 @@ function encode(data) {
     .join("&")
 }
 
-const ContactUs = ({ title, fromContactPage }) => {
+const ContactUs = ({ title, fromContactPage, fromMenuPage }) => {
+  const fromSpecialPage = fromMenuPage || fromContactPage
   const [state, setState] = useState({})
   const [valid, setValid] = useState(false)
 
@@ -64,10 +65,10 @@ const ContactUs = ({ title, fromContactPage }) => {
   return (
     <C.Wrapper
       className={wrapper}
-      bg={!fromContactPage && data.file.childImageSharp.fluid.src}
+      bg={!fromSpecialPage && data.file.childImageSharp.fluid.src}
     >
       <C.Container className={container}>
-        <C.Header className={header}>
+        <C.Header className={header} fontSize={fromSpecialPage ? "48" : "62"}>
           {title || "Skontaktuj się z nami"}
         </C.Header>
         <C.Form
