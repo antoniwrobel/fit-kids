@@ -23,7 +23,7 @@ function encode(data) {
     .join("&")
 }
 
-const ContactUs = () => {
+const ContactUs = ({ title, fromContactPage }) => {
   const [state, setState] = useState({})
   const [valid, setValid] = useState(false)
 
@@ -62,9 +62,14 @@ const ContactUs = () => {
   const data = useStaticQuery(query)
 
   return (
-    <C.Wrapper className={wrapper} bg={data.file.childImageSharp.fluid.src}>
+    <C.Wrapper
+      className={wrapper}
+      bg={!fromContactPage && data.file.childImageSharp.fluid.src}
+    >
       <C.Container className={container}>
-        <C.Header className={header}>Skontaktuj się z nami</C.Header>
+        <C.Header className={header}>
+          {title || "Skontaktuj się z nami"}
+        </C.Header>
         <C.Form
           name="contact"
           data-netlify="true"

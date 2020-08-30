@@ -12,3 +12,22 @@
   font-family: "Saira Semi Condensed";
   font-weight: 700;
 }
+
+.details {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.detail {
+  width: 50%;
+}
+
+.details h4 {
+  color: #dea542;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.detail div {
+  margin: 20px 0;
+}

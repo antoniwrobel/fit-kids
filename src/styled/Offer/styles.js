@@ -10,3 +10,7 @@ export const Desc = styled.p`
   font-size: 20px;
   line-height: 22px;
 `
+
+export const Details = styled.div``
+
+export const Detail = styled.div``
