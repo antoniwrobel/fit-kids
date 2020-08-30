@@ -11,6 +11,9 @@ import {
   image,
   hearts,
   desc,
+  img,
+  upper,
+  userDetails,
 } from "../styles/recomendations.module.css"
 
 import * as R from "../styled/Recomendations/styles"
@@ -39,12 +42,13 @@ const Recomendations = () => {
 
             return (
               <R.Card className={card} key={originalId}>
-                <R.Upper>
+                <R.Upper className={upper}>
                   <R.Img
+                    className={img}
                     src={nodes[index].picture.fixed.src}
                     alt="user photo"
                   />
-                  <R.UserDetails>
+                  <R.UserDetails className={userDetails}>
                     <R.Name className={name}>{fullName}</R.Name>
                     <R.Small className={small}>{role}</R.Small>
                     <R.Hearts className={hearts}>

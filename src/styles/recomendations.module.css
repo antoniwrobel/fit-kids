@@ -48,6 +48,25 @@
   border-top-right-radius: 0;
 }
 
+.upper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  justify-content: space-between;
+  max-width: 75%;
+}
+
+.img {
+  width: 95px;
+  height: 95px;
+  border-radius: 95px;
+}
+
+.userDetails {
+  display: flex;
+  flex-direction: column;
+}
+
 .card {
   display: flex;
   width: 100%;
@@ -91,4 +110,5 @@
   margin-top: 20px;
   font-style: italic;
   line-height: 20px;
+  max-width: 75%;
 }
