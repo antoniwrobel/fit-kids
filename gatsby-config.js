@@ -8,9 +8,9 @@ module.exports = {
   siteMetadata: {
     title: "Fit kids",
     description: "Fit kids - catering dietetyczny dla dzieci",
-    url: "https://www.fit-kids.pl",
+    url: "https://www.kidsfit.pl",
     image: "./src/images/logo-kidsfit.png",
-    siteUrl: "https://fit-kids.pl",
+    siteUrl: "https://kidsfit.pl",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
