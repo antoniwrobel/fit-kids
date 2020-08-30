@@ -35,9 +35,11 @@ const SEO = ({ title, description, image, swiper, captcha }) => {
       )}
       {seo.image && <meta property="og:image" content={seo.image} />}
       {seo.title && <meta name="twitter:title" content={seo.title} />}
+
       {seo.description && (
         <meta name="twitter:description" content={seo.description} />
       )}
+
       {swiper && (
         <link
           rel="stylesheet"

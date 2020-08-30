@@ -5,6 +5,8 @@ export const Wrapper = styled.div`
   width: 100%;
 `
 
+export const Container = styled.div``
+
 export const BackgroundImage = styled(Image)`
   width: 100%;
   height: ${({ indexPage }) => (indexPage ? "782px" : "450px")};

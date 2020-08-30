@@ -56,6 +56,8 @@ const ContactUs = () => {
     }
   }
 
+  const onloadCallback = () => {}
+
   const data = useStaticQuery(query)
 
   return (
@@ -119,6 +121,7 @@ const ContactUs = () => {
             sitekey="6LfpRcUZAAAAAIausgzTD112UykaV-htRb4ZGrcA"
             render="explicit"
             verifyCallback={verifyCallback}
+            onloadCallback={onloadCallback}
           />
 
           <C.Button type="submit" className={button}>
