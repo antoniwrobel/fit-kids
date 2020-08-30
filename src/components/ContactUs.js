@@ -115,11 +115,11 @@ const ContactUs = () => {
           </C.InputWrap>
           <input data-netlify-recaptcha="true" className={hidden} hidden />
 
-          {/* <Recaptcha
-            sitekey="6LdFBMUZAAAAALqGCHnfE4VsOXYnBIhGAuIcOGeP"
+          <Recaptcha
+            sitekey="6LfpRcUZAAAAAIausgzTD112UykaV-htRb4ZGrcA"
             render="explicit"
             verifyCallback={verifyCallback}
-          /> */}
+          />
 
           <C.Button type="submit" className={button}>
             Wyślij
