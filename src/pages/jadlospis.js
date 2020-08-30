@@ -9,7 +9,13 @@ import Contact from "../components/ContactUs"
 import Footer from "../components/Footer"
 
 import * as J from "../styled/Offer/styles"
-import { wrapper, item, dayClass, dateClass } from "../styles/offer.module.css"
+import {
+  wrapper,
+  item,
+  dayClass,
+  dateClass,
+  desc as descClass,
+} from "../styles/offer.module.css"
 
 const description = [
   {
@@ -38,7 +44,11 @@ const MenuPage = ({
         <J.Descriptions>
           {description.map(({ id, desc }) => {
             return (
-              <J.Desc key={id} dangerouslySetInnerHTML={createDesc(desc)} />
+              <J.Desc
+                key={id}
+                dangerouslySetInnerHTML={createDesc(desc)}
+                className={descClass}
+              />
             )
           })}
         </J.Descriptions>
