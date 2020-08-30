@@ -51,7 +51,7 @@ const OfferPage = () => {
       </O.Wrapper>
       <PackageOptions />
 
-      <Area />
+      <Area fromOffer />
       <Recomendations />
       <Gallery />
       <Contact />

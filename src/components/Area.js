@@ -50,20 +50,23 @@ const paragraphs = [
   },
 ]
 
-const Area = () => {
+const Area = ({ fromOffer }) => {
   const data = useStaticQuery(query)
   const { file } = data
 
   return (
     <A.Wrapper className={wrapper} id="area">
-      <A.ButtonSection className={buttonSection}>
-        <span>Sprawdz naszą ofertę:</span>
-        <div>
-          <A.Button to="/oferta" className={button}>
-            Oferta
-          </A.Button>
-        </div>
-      </A.ButtonSection>
+      {!fromOffer && (
+        <A.ButtonSection className={buttonSection}>
+          <span>Sprawdz naszą ofertę:</span>
+          <div>
+            <A.Button to="/oferta" className={button}>
+              Oferta
+            </A.Button>
+          </div>
+        </A.ButtonSection>
+      )}
+
       <A.Container className={container}>
         <A.Section className={section}>
           <A.Header className={header}>Obszar działania</A.Header>
