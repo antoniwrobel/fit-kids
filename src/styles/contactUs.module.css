@@ -3,7 +3,7 @@
   min-height: 550px;
   width: 100%;
   height: 100%;
-  top: -190px;
+  /* top: -190px; */
 }
 
 .wrapper::after {

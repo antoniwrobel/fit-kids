@@ -9,6 +9,7 @@ import Area from "../components/Area"
 import Recomendations from "../components/Recomendations"
 import Gallery from "../components/Gallery"
 import ContactUs from "../components/ContactUs"
+import Footer from "../components/Footer"
 
 const HomePage = () => {
   return (
@@ -21,6 +22,7 @@ const HomePage = () => {
       <Recomendations />
       <Gallery />
       <ContactUs />
+      <Footer />
     </Layout>
   )
 }

@@ -3,8 +3,9 @@
   width: 100%;
   background-color: #fdff7a;
   position: relative;
-  top: -190px;
-  padding-top: 190px;
+  /* top: -190px; */
+  /* padding-top: 190px; */
+  padding-top: 100px;
   display: flex;
 }
 

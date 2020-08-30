@@ -38,6 +38,7 @@ const ContactUs = () => {
     if (!valid) {
       return alert("Zaakceptuj reCaptcha")
     }
+
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -70,6 +71,7 @@ const ContactUs = () => {
           method="POST"
           netlify
           action="/dziekujemy/"
+          netlify-honeypot="bot-field"
           className={form}
           onSubmit={handleSubmit}
         >
