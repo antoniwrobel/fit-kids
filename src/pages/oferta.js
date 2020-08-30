@@ -44,7 +44,11 @@ const OfferPage = () => {
         <O.Descriptions>
           {description.map(({ id, desc }) => {
             return (
-              <O.Desc key={id} dangerouslySetInnerHTML={createDesc(desc)} />
+              <O.Desc
+                key={id}
+                dangerouslySetInnerHTML={createDesc(desc)}
+                className={desc}
+              />
             )
           })}
         </O.Descriptions>

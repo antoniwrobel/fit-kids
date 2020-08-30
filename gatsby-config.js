@@ -20,6 +20,12 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-robots-txt`,
     {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        displayName: false,
+      },
+    },
+    {
       resolve: `gatsby-plugin-recaptcha`,
       options: {
         args: `?onload=onloadCallback&render=explicit`,
