@@ -11,6 +11,8 @@ import {
   paragraphHeader,
   list,
   listItem,
+  buttonSection,
+  button,
 } from "../styles/area.module.css"
 import * as A from "../styled/Area/styles"
 
@@ -54,6 +56,14 @@ const Area = () => {
 
   return (
     <A.Wrapper className={wrapper}>
+      <A.ButtonSection className={buttonSection}>
+        <span>Sprawdz naszą ofertę:</span>
+        <div>
+          <A.Button to="/oferta" className={button}>
+            Oferta
+          </A.Button>
+        </div>
+      </A.ButtonSection>
       <A.Container className={container}>
         <A.Section className={section}>
           <A.Header className={header}>Obszar działania</A.Header>
