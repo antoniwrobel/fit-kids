@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { navigate } from "gatsby-link"
 import Recaptcha from "react-recaptcha"
@@ -27,6 +27,11 @@ const ContactUs = ({ title, fromContactPage, fromMenuPage }) => {
   const fromSpecialPage = fromMenuPage || fromContactPage
   const [state, setState] = useState({})
   const [valid, setValid] = useState(false)
+  const [mobile, setMobile] = useState(false)
+
+  useEffect(() => {
+    setMobile(window.innerWidth <= 1019)
+  }, [])
 
   const handleChange = e => {
     setState({ ...state, [e.target.name]: e.target.value })
@@ -59,8 +64,6 @@ const ContactUs = ({ title, fromContactPage, fromMenuPage }) => {
   }
 
   const onloadCallback = () => {}
-
-  const mobile = window.innerWidth <= 1019
 
   const data = useStaticQuery(query)
 

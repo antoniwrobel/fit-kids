@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import SwiperElement from "react-id-swiper"
@@ -11,24 +11,31 @@ import {
 } from "../styles/swiper.module.css"
 import * as H from "../styled/Home/styles"
 
-const mobile = window.innerWidth <= 1019
-
-const params = {
-  speed: 900,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  observer: true,
-  observeParents: true,
-  loop: true,
-  navigation: !mobile && {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-}
-
 const Swiper = () => {
+  const [mobile, setMobile] = useState(false)
+  const [params, setParams] = useState({})
+
+  useEffect(() => {
+    setMobile(window.innerWidth <= 1019)
+  }, [])
+
+  useEffect(() => {
+    setParams({
+      speed: 900,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      observer: true,
+      observeParents: true,
+      loop: true,
+      navigation: !mobile && {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    })
+  }, [mobile])
+
   const data = useStaticQuery(query)
 
   return (

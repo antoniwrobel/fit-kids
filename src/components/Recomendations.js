@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Image from "gatsby-image"
 
@@ -18,14 +18,21 @@ import {
 
 import * as R from "../styled/Recomendations/styles"
 
-const mobile = window.innerWidth <= 1019
-
-const params = {
-  slidesPerView: mobile ? 1 : 3,
-  spaceBetween: 55,
-}
-
 const Recomendations = () => {
+  const [mobile, setMobile] = useState(false)
+  const [params, setParams] = useState({})
+
+  useEffect(() => {
+    setMobile(window.innerWidth <= 1019)
+  }, [])
+
+  useEffect(() => {
+    setParams({
+      slidesPerView: mobile ? 1 : 3,
+      spaceBetween: 55,
+    })
+  }, [mobile])
+
   const {
     allDatoCmsReview: { nodes },
     file: heartImg,

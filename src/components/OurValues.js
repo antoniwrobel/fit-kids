@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
 import * as O from "../styled/OurValues/styles"
@@ -8,8 +8,6 @@ import {
   cardHeader,
   cardDesc,
 } from "../styles/ourValues.module.css"
-
-const mobile = window.innerWidth <= 1019
 
 const cards = [
   {
@@ -33,12 +31,19 @@ const cards = [
   },
 ]
 
-const createTitle = title => ({
-  __html: mobile ? title.replace("<br/>", "") : title,
-})
-
 const OurValues = () => {
   const data = useStaticQuery(query)
+
+  const [mobile, setMobile] = useState(false)
+
+  useEffect(() => {
+    setMobile(window.innerWidth <= 1019)
+  }, [])
+
+  const createTitle = title => ({
+    __html: mobile ? title.replace("<br/>", "") : title,
+  })
+
   const {
     allFile: { nodes },
   } = data
