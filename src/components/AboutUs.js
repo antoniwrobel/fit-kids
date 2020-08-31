@@ -11,6 +11,7 @@ import {
   content,
   image,
   lastContent,
+  article,
 } from "../styles/aboutUs.module.css"
 
 const PINK = "#f67685"
@@ -76,7 +77,7 @@ const AboutUs = () => {
       <A.Articles>
         {articles.map(({ id, title, description, alt }, index) => {
           return (
-            <A.Article key={id}>
+            <A.Article key={id} className={article}>
               {title && (
                 <A.HeaderSmall className={headerSmall}>{title}</A.HeaderSmall>
               )}

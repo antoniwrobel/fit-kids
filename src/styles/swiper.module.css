@@ -8,3 +8,46 @@
   right: 35%;
   margin: 0 auto;
 }
+
+.paragraph {
+  font-size: 30px;
+  color: #fff;
+  margin-left: 55px;
+  margin-top: 55px;
+  line-height: 30px;
+}
+
+.headerSmall {
+  font-family: Acme;
+  font-size: 72px;
+  font-weight: 400;
+  color: #22fef6;
+  margin-left: 55px;
+}
+
+.header {
+  font-family: Acme;
+  font-size: 72px;
+  color: #fff;
+  width: auto;
+  height: auto;
+  font-weight: 400;
+}
+
+@media (max-width: 1029px) {
+  .content {
+    max-width: 100%;
+    left: 0;
+    right: 0;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .headerSmall {
+    margin-left: 0;
+  }
+
+  .paragraph {
+    margin: 20px 0;
+  }
+}

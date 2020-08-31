@@ -4,11 +4,7 @@ export const Wrapper = styled.section``
 
 export const Header = styled.div``
 
-export const Article = styled.article`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-`
+export const Article = styled.article``
 
 export const HeaderSmall = styled.h3``
 

@@ -18,8 +18,10 @@ import {
 
 import * as R from "../styled/Recomendations/styles"
 
+const mobile = window.innerWidth <= 1019
+
 const params = {
-  slidesPerView: 3,
+  slidesPerView: mobile ? 1 : 3,
   spaceBetween: 55,
 }
 

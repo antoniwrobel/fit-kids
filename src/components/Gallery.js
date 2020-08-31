@@ -12,6 +12,8 @@ import * as G from "../styled/Gallery/styles"
 
 SwiperCore.use([EffectCoverflow])
 
+const mobile = window.innerWidth <= 1019
+
 const params = {
   coverflowEffect: {
     rotate: 50,
@@ -23,7 +25,7 @@ const params = {
   effect: "coverflow",
   containerClass: "gallery-swiper",
   centeredSlides: true,
-  slidesPerView: "3",
+  slidesPerView: mobile ? 1 : 3,
 }
 
 const Gallery = () => {

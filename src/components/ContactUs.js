@@ -60,7 +60,17 @@ const ContactUs = ({ title, fromContactPage, fromMenuPage }) => {
 
   const onloadCallback = () => {}
 
+  const mobile = window.innerWidth <= 1019
+
   const data = useStaticQuery(query)
+
+  const fontSize = fromSpecialPage
+    ? mobile
+      ? "35"
+      : "48"
+    : mobile
+    ? "50"
+    : "62"
 
   return (
     <C.Wrapper
@@ -68,7 +78,7 @@ const ContactUs = ({ title, fromContactPage, fromMenuPage }) => {
       bg={!fromSpecialPage && data.file.childImageSharp.fluid.src}
     >
       <C.Container className={container}>
-        <C.Header className={header} fontSize={fromSpecialPage ? "48" : "62"}>
+        <C.Header className={header} fontSize={fontSize}>
           {title || "Skontaktuj się z nami"}
         </C.Header>
         <C.Form

@@ -9,6 +9,8 @@ import {
   cardDesc,
 } from "../styles/ourValues.module.css"
 
+const mobile = window.innerWidth <= 1019
+
 const cards = [
   {
     title: "Gwarancja <br/> świeżości",
@@ -31,7 +33,9 @@ const cards = [
   },
 ]
 
-const createTitle = title => ({ __html: title })
+const createTitle = title => ({
+  __html: mobile ? title.replace("<br/>", "") : title,
+})
 
 const OurValues = () => {
   const data = useStaticQuery(query)

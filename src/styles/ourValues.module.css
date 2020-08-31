@@ -60,3 +60,22 @@
   letter-spacing: -0.88px;
   line-height: 22px;
 }
+
+@media (max-width: 1019px) {
+  .wrapper {
+    flex-direction: column;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 100%;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .cardDesc {
+    padding: 0 0px;
+  }
+}

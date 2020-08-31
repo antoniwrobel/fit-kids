@@ -112,3 +112,24 @@
   line-height: 20px;
   max-width: 75%;
 }
+
+@media (max-width: 1019px) {
+  .wrapper {
+    margin-top: 0px;
+    padding: 20px 10px;
+    max-width: 100%;
+  }
+
+  .wrapper::before,
+  .wrapper::after {
+    content: none;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .upper {
+    flex-direction: column;
+  }
+}

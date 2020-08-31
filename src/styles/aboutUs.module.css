@@ -35,6 +35,12 @@
   align-items: center;
 }
 
+.article {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
 .image {
   width: 50%;
 }
@@ -42,4 +48,38 @@
 .lastContent {
   flex-direction: row-reverse;
   margin-top: 0;
+}
+
+@media (max-width: 1019px) {
+  .wrapper {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .header {
+    font-size: 40px;
+  }
+
+  .content {
+    flex-direction: column;
+    margin: 20px 0;
+  }
+
+  .description {
+    max-width: 100%;
+  }
+
+  .image {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .article {
+    align-items: flex-start;
+  }
+
+  .headerSmall {
+    width: 100%;
+    max-width: 100%;
+  }
 }

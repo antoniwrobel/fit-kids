@@ -3,8 +3,15 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import SwiperElement from "react-id-swiper"
 
-import { content } from "../styles/swiper.module.css"
+import {
+  content,
+  paragraph,
+  header,
+  headerSmall,
+} from "../styles/swiper.module.css"
 import * as H from "../styled/Home/styles"
+
+const mobile = window.innerWidth <= 1019
 
 const params = {
   speed: 900,
@@ -15,41 +22,65 @@ const params = {
   observer: true,
   observeParents: true,
   loop: true,
-  navigation: {
+  navigation: !mobile && {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
 }
 
-const Swiper = ({ indexPage }) => {
+const Swiper = () => {
   const data = useStaticQuery(query)
 
   return (
     <H.Wrapper>
       <SwiperElement {...params}>
-        {data.allFile.nodes.map((node, index) => {
-          return (
-            <H.HeroSlider key={index}>
-              <H.BackgroundImageCustom
-                fluid={node.childImageSharp.fluid}
-                alt="background image"
-                indexPage
-              />
+        {mobile
+          ? data.mobileImage.nodes.map((node, index) => {
+              return (
+                <H.HeroSlider key={index}>
+                  <H.BackgroundImageCustom
+                    fluid={node.childImageSharp.fluid}
+                    alt="background image"
+                    indexPage
+                  />
 
-              <H.Content className={content}>
-                <H.Headers>
-                  <H.Header>Gwarancja</H.Header>
-                  <H.Header small>satysfakcji</H.Header>
-                </H.Headers>
+                  <H.Content className={content}>
+                    <H.Headers>
+                      <H.Header className={header}>Gwarancja</H.Header>
+                      <H.Header className={headerSmall}>satysfakcji</H.Header>
+                    </H.Headers>
 
-                <H.Paragraph>
-                  Gwarantujemy pełną satysfkację z naszych usług, popartą
-                  doświadczeniem oraz kompetencjami.
-                </H.Paragraph>
-              </H.Content>
-            </H.HeroSlider>
-          )
-        })}
+                    <H.Paragraph className={paragraph}>
+                      Gwarantujemy pełną satysfkację z naszych usług, popartą
+                      doświadczeniem oraz kompetencjami.
+                    </H.Paragraph>
+                  </H.Content>
+                </H.HeroSlider>
+              )
+            })
+          : data.desktopImage.nodes.map((node, index) => {
+              return (
+                <H.HeroSlider key={index}>
+                  <H.BackgroundImageCustom
+                    fluid={node.childImageSharp.fluid}
+                    alt="background image"
+                    indexPage
+                  />
+
+                  <H.Content className={content}>
+                    <H.Headers>
+                      <H.Header className={header}>Gwarancja</H.Header>
+                      <H.Header className={headerSmall}>satysfakcji</H.Header>
+                    </H.Headers>
+
+                    <H.Paragraph className={paragraph}>
+                      Gwarantujemy pełną satysfkację z naszych usług, popartą
+                      doświadczeniem oraz kompetencjami.
+                    </H.Paragraph>
+                  </H.Content>
+                </H.HeroSlider>
+              )
+            })}
       </SwiperElement>
     </H.Wrapper>
   )
@@ -57,7 +88,7 @@ const Swiper = ({ indexPage }) => {
 
 const query = graphql`
   {
-    allFile(
+    desktopImage: allFile(
       filter: {
         dir: { regex: "/slider/" }
         relativePath: { regex: "/desktop/" }
@@ -67,6 +98,21 @@ const query = graphql`
       nodes {
         childImageSharp {
           fluid(maxWidth: 2500, quality: 80) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+    mobileImage: allFile(
+      filter: {
+        dir: { regex: "/slider/" }
+        relativePath: { regex: "/mobile/" }
+      }
+      sort: { fields: relativePath }
+    ) {
+      nodes {
+        childImageSharp {
+          fluid(quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
