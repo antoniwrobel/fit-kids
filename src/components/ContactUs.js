@@ -42,7 +42,7 @@ const ContactUs = ({ title, fromContactPage, fromMenuPage }) => {
     const form = e.target
 
     if (!valid) {
-      return alert("Zaakceptuj reCaptcha")
+      return alert("Zaakceptuj reCaptcha.")
     }
 
     fetch("/", {
