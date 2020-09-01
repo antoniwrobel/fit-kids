@@ -1,15 +1,27 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 
 import { graphql, useStaticQuery } from "gatsby"
 
 import * as H from "../styled/Home/styles"
+import { backgroundImg } from "../styles/home.module.css"
 
 const Hero = () => {
+  const [mobile, setMobile] = useState()
+  useEffect(() => {
+    setMobile(window.innerWidth <= 1019)
+  }, [])
+
   const data = useStaticQuery(query)
+  console.log(data)
 
   return (
     <H.BackgroundImage
-      fluid={data.file.childImageSharp.fluid}
+      className={backgroundImg}
+      fluid={
+        mobile
+          ? data.mobile.childImageSharp.fluid
+          : data.desktop.childImageSharp.fluid
+      }
       alt="background image"
     />
   )
@@ -17,9 +29,16 @@ const Hero = () => {
 
 const query = graphql`
   {
-    file(relativePath: { eq: "happy-kid.png" }) {
+    desktop: file(relativePath: { eq: "happy-kid.png" }) {
       childImageSharp {
         fluid(maxWidth: 1600, quality: 90) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    mobile: file(relativePath: { eq: "happy-kid.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 400, quality: 100) {
           ...GatsbyImageSharpFluid
         }
       }

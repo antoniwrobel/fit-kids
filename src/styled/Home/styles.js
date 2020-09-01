@@ -8,18 +8,10 @@ export const Wrapper = styled.div`
 export const Container = styled.div``
 
 export const BackgroundImage = styled(Image)`
-  width: 100%;
   height: ${({ indexPage }) => (indexPage ? "782px" : "450px")};
-  max-width: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-reapeat;
-  margin: 0 auto;
 `
 
-export const HeroSlider = styled.div`
-  min-height: 780px !important;
-`
+export const HeroSlider = styled.div``
 
 export const Headers = styled.div``
 

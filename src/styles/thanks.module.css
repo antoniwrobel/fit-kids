@@ -8,3 +8,10 @@
 .container h2 {
   justify-content: center;
 }
+
+@media (max-width: 1019px) {
+  .container {
+    max-width: 100%;
+    padding: 10px;
+  }
+}
