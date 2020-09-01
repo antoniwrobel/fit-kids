@@ -42,9 +42,9 @@ const Footer = () => {
             <h4>Nawigacja</h4>
             <div>
               <Link to="/oferta">Oferta</Link>
-              <AnchorLink to="#o-firmie">O firmie</AnchorLink>
-              <AnchorLink to="#area">Obszar działania</AnchorLink>
-              <AnchorLink to="#gallery">Galeria</AnchorLink>
+              <AnchorLink to="/#o-firmie">O firmie</AnchorLink>
+              <AnchorLink to="/#area">Obszar działania</AnchorLink>
+              <AnchorLink to="/#gallery">Galeria</AnchorLink>
               <Link to="/kontakt">Kontakt</Link>
             </div>
           </F.Column>
