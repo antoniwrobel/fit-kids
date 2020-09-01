@@ -63,3 +63,29 @@
 .dateClass {
   font-size: 28px;
 }
+
+@media (max-width: 1019px) {
+  .wrapper {
+    padding: 10px 10px;
+  }
+
+  .wrapper h2 {
+    font-size: 50px;
+  }
+
+  .desc {
+    margin: 10px 0;
+  }
+
+  .item {
+    margin: 10px 0;
+  }
+
+  .item strong {
+    min-width: auto;
+  }
+
+  .item li {
+    margin-bottom: 10px;
+  }
+}
