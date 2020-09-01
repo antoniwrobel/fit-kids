@@ -119,4 +119,8 @@
   .list {
     margin-bottom: 10px;
   }
+
+  .buttonSection {
+    display: none;
+  }
 }

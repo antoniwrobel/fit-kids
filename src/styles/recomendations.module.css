@@ -117,8 +117,11 @@
 @media (max-width: 1019px) {
   .wrapper {
     margin-top: 0px;
-    padding: 20px 10px;
-    max-width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 0 20px 0 #dedede;
+    max-width: 350px;
   }
 
   .wrapper::before,
