@@ -12,10 +12,10 @@ import {
 } from "../styles/footer.module.css"
 
 const Footer = () => {
-  const data = useStaticQuery(query)
-
+  // const data = useStaticQuery(query)
+  // bg={data.file.childImageSharp.fluid.src}
   return (
-    <F.Wrapper className={wrapper} bg={data.file.childImageSharp.fluid.src}>
+    <F.Wrapper className={wrapper}>
       <F.Container className={container}>
         <F.ColumnsWrapper className={columnsWrapper}>
           <F.Column className={column}>

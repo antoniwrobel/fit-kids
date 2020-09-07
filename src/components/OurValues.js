@@ -54,7 +54,7 @@ const OurValues = () => {
         return (
           <O.Card key={nodes[index].id} className={card}>
             <O.BackgroundImage
-              fixed={nodes[index].childImageSharp.fixed}
+              fluid={nodes[index].childImageSharp.fluid}
               alt={title}
               borderColor={borderColor}
             />
@@ -76,8 +76,8 @@ const query = graphql`
     allFile(filter: { dir: { regex: "/ourValues/" } }, sort: { fields: name }) {
       nodes {
         childImageSharp {
-          fixed(width: 350, height: 200) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 350, maxHeight: 200) {
+            ...GatsbyImageSharpFluid
           }
         }
         id

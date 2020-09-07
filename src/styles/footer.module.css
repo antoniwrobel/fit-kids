@@ -6,7 +6,7 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 60px 30px;
+  padding: 40px 0px 0;
   z-index: 1;
   box-sizing: border-box;
   position: relative;
@@ -27,7 +27,7 @@
 }
 
 .column div {
-  margin: 40px 0;
+  margin: 40px 0 20px;
   display: flex;
   flex-direction: column;
 }
@@ -37,6 +37,7 @@
   font-size: 18px;
   color: #0b443a;
   line-height: 22px;
+  max-width: fit-content;
 }
 
 @media (max-width: 1019px) {

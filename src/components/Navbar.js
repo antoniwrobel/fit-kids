@@ -22,19 +22,12 @@ const styles = {
   right: 0,
 }
 
-const pages = [
-  { name: "", slug: "/" },
-  { name: "oferta", slug: "/oferta" },
-  { name: "o firmie", slug: "/#o-firmie", anchorLink: true },
-  { name: "jadłospis", slug: "/jadlospis" },
-  { name: "kontakt", slug: "/kontakt" },
-]
-
-const handleNavPages = ({ anchorLink, name, slug }) => {
+const handleNavPages = ({ anchorLink, name, slug, img }) => {
   const Element = anchorLink ? AnchorLink : Link
 
   return (
     <li key={slug} className={listItem}>
+      {img && <Image fixed={img} alt="company logo" fadeIn={false} />}
       <Element to={slug} className={listHref}>
         {name}
       </Element>
@@ -44,11 +37,19 @@ const handleNavPages = ({ anchorLink, name, slug }) => {
 
 const Navbar = () => {
   const data = useStaticQuery(query)
+  const pages = [
+    { name: "", slug: "/", img: data.logo.childImageSharp.fixed },
+    { name: "oferta", slug: "/oferta" },
+    { name: "o firmie", slug: "/#o-firmie", anchorLink: true },
+    { name: "jadłospis", slug: "/jadlospis" },
+    { name: "kontakt", slug: "/kontakt" },
+  ]
+
   return (
     <>
       <Image
         className={image}
-        fluid={data.file.childImageSharp.fluid}
+        fluid={data.belka.childImageSharp.fluid}
         style={styles}
         alt="company logo"
         fadeIn={false}
@@ -62,10 +63,17 @@ const Navbar = () => {
 
 const query = graphql`
   {
-    file(relativePath: { eq: "belka_menu_logo.png" }) {
+    belka: file(relativePath: { eq: "belka-menu.png" }) {
       childImageSharp {
         fluid(maxWidth: 1000, quality: 100) {
           ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    logo: file(relativePath: { eq: "logo.jpg" }) {
+      childImageSharp {
+        fixed(width: 166, height: 118) {
+          ...GatsbyImageSharpFixed
         }
       }
     }

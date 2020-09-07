@@ -8,11 +8,13 @@ export const Wrapper = styled.footer`
     width: 100%;
     height: 100%;
     top: 0;
-    background: url(${({ bg }) => bg}) no-repeat;
-    background-size: contain;
+    // background: url(${({ bg }) => bg}) no-repeat;
+    background: #207587;
+    background-size: cover;
     z-index: 0;
-    max-width: 720px;
+    max-width: 40%;
     right: 0;
+    border-radius: 70px 0px 0px 70px;
   }
 `
 
