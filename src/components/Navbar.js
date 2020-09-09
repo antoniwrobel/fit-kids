@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
@@ -10,7 +10,18 @@ import {
   listItem,
   listHref,
   image,
+  mobileImg,
+  menu,
+  icon,
+  active as activeClass,
+  mobileMenu,
+  visible,
+  navbarMobile,
+  listMobile,
+  mobileLink,
 } from "../styles/navbar.module.css"
+
+import logoImg from "../images/fitkids-logo.svg"
 
 const styles = {
   margin: "0 auto",
@@ -22,12 +33,12 @@ const styles = {
   right: 0,
 }
 
-const handleNavPages = ({ anchorLink, name, slug, img }) => {
+const handleNavPages = ({ anchorLink, name, slug, logo }) => {
   const Element = anchorLink ? AnchorLink : Link
 
   return (
     <li key={slug} className={listItem}>
-      {img && <Image fixed={img} alt="company logo" fadeIn={false} />}
+      {logo && <img src={logoImg} alt="company logo" />}
       <Element to={slug} className={listHref}>
         {name}
       </Element>
@@ -35,16 +46,17 @@ const handleNavPages = ({ anchorLink, name, slug, img }) => {
   )
 }
 
+const pages = [
+  { name: "", slug: "/", logo: true },
+  { name: "oferta", slug: "/oferta" },
+  { name: "o firmie", slug: "/#o-firmie", anchorLink: true },
+  { name: "jadłospis", slug: "/jadlospis" },
+  { name: "kontakt", slug: "/kontakt" },
+]
+
 const Navbar = () => {
   const data = useStaticQuery(query)
-  const pages = [
-    { name: "", slug: "/", img: data.logo.childImageSharp.fixed },
-    { name: "oferta", slug: "/oferta" },
-    { name: "o firmie", slug: "/#o-firmie", anchorLink: true },
-    { name: "jadłospis", slug: "/jadlospis" },
-    { name: "kontakt", slug: "/kontakt" },
-  ]
-
+  const [active, setActive] = useState(false)
   return (
     <>
       <Image
@@ -54,9 +66,30 @@ const Navbar = () => {
         alt="company logo"
         fadeIn={false}
       />
+
+      <Link to="/" className={mobileLink}>
+        <img src={logoImg} alt="company logo" className={mobileImg} />
+      </Link>
+
+      <div
+        className={`${icon} ${active ? activeClass : ""}`}
+        onClick={() => setActive(!active)}
+      >
+        <div className={menu} />
+      </div>
+
       <nav className={navbar}>
         <ul className={list}>{pages.map(handleNavPages)}</ul>
       </nav>
+
+      <div
+        className={`${mobileMenu} ${active ? visible : ""}`}
+        onClick={() => setActive(false)}
+      >
+        <nav className={navbarMobile}>
+          <ul className={listMobile}>{pages.map(handleNavPages)}</ul>
+        </nav>
+      </div>
     </>
   )
 }
@@ -67,13 +100,6 @@ const query = graphql`
       childImageSharp {
         fluid(maxWidth: 1000, quality: 100) {
           ...GatsbyImageSharpFluid_noBase64
-        }
-      }
-    }
-    logo: file(relativePath: { eq: "logo.jpg" }) {
-      childImageSharp {
-        fixed(width: 166, height: 118) {
-          ...GatsbyImageSharpFixed
         }
       }
     }

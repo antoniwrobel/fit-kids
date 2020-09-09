@@ -3,7 +3,7 @@
   top: 255px;
   display: flex;
   flex-direction: column;
-  max-width: 350px;
+  max-width: 550px;
   left: 0;
   right: 35%;
   margin: 0 auto;
@@ -19,7 +19,7 @@
 
 .headerSmall {
   font-family: Acme;
-  font-size: 72px;
+  font-size: 68px;
   font-weight: 400;
   color: #22fef6;
   margin-left: 55px;
@@ -37,6 +37,7 @@
 @media (max-width: 1029px) {
   .content {
     max-width: 100%;
+    top: 100px;
     left: 0;
     right: 0;
     padding: 0 20px;

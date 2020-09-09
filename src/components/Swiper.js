@@ -11,6 +11,50 @@ import {
 } from "../styles/swiper.module.css"
 import * as H from "../styled/Home/styles"
 
+const slogan = [
+  [
+    {
+      first: "Pełen",
+      second: "profesjonalizm",
+      desc:
+        "Doświadczenie naszych pracowników sprawia, że współpraca z nami to czysta przyjemność.",
+    },
+  ],
+  [
+    {
+      first: "Najlepszy catering",
+      second: "dla najmłodszych",
+      desc:
+        "Dostarczamy zdrowe i smaczne posiłki do żłobków, przedszkoli oraz szkół na terenie Łukowa i okolic.",
+    },
+  ],
+  [
+    {
+      first: "Zdrowie",
+      second: "przede wszystkim",
+      desc:
+        "Przykładamy dużą wagę do tego, aby wydawane przez nas posiłki przygotowywane były wyłącznie ze świeżych produktów.",
+    },
+  ],
+  [
+    {
+      first: "Gwarancja",
+      second: "satysfakcji",
+      desc:
+        "Gwarantujemy pełną satysfakcję z naszych usług, popartą doświadczeniem oraz kompetencjami.",
+    },
+  ],
+  [
+    {
+      first: "Darmowe napoje",
+      second: "do posiłków",
+      desc:
+        "Do każdego posiłku dodajemy w gratisie napój, zgodnie z ustalonym menu.",
+    },
+  ],
+  [{ first: "", second: "", desc: "" }],
+]
+
 const Swiper = () => {
   const [mobile, setMobile] = useState(false)
   const [params, setParams] = useState({})
@@ -53,13 +97,16 @@ const Swiper = () => {
 
                   <H.Content className={content}>
                     <H.Headers>
-                      <H.Header className={header}>Gwarancja</H.Header>
-                      <H.Header className={headerSmall}>satysfakcji</H.Header>
+                      <H.Header className={header}>
+                        {slogan[index][0].first}
+                      </H.Header>
+                      <H.Header className={headerSmall}>
+                        {slogan[index][0].second}
+                      </H.Header>
                     </H.Headers>
 
                     <H.Paragraph className={paragraph}>
-                      Gwarantujemy pełną satysfkację z naszych usług, popartą
-                      doświadczeniem oraz kompetencjami.
+                      {slogan[index][0].desc}
                     </H.Paragraph>
                   </H.Content>
                 </H.HeroSlider>
@@ -76,13 +123,16 @@ const Swiper = () => {
 
                   <H.Content className={content}>
                     <H.Headers>
-                      <H.Header className={header}>Gwarancja</H.Header>
-                      <H.Header className={headerSmall}>satysfakcji</H.Header>
+                      <H.Header className={header}>
+                        {slogan[index][0].first}
+                      </H.Header>
+                      <H.Header className={headerSmall}>
+                        {slogan[index][0].second}
+                      </H.Header>
                     </H.Headers>
 
                     <H.Paragraph className={paragraph}>
-                      Gwarantujemy pełną satysfkację z naszych usług, popartą
-                      doświadczeniem oraz kompetencjami.
+                      {slogan[index][0].desc}
                     </H.Paragraph>
                   </H.Content>
                 </H.HeroSlider>
@@ -104,7 +154,7 @@ const query = graphql`
     ) {
       nodes {
         childImageSharp {
-          fluid(maxWidth: 2500, quality: 100) {
+          fluid(maxWidth: 2500, quality: 80) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -119,7 +169,7 @@ const query = graphql`
     ) {
       nodes {
         childImageSharp {
-          fluid(quality: 100) {
+          fluid(quality: 80) {
             ...GatsbyImageSharpFluid
           }
         }

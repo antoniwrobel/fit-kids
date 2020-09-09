@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { graphql, useStaticQuery } from "gatsby"
+
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 import * as F from "../styled/Footer/styles"
@@ -12,8 +12,6 @@ import {
 } from "../styles/footer.module.css"
 
 const Footer = () => {
-  // const data = useStaticQuery(query)
-  // bg={data.file.childImageSharp.fluid.src}
   return (
     <F.Wrapper className={wrapper}>
       <F.Container className={container}>
@@ -34,8 +32,8 @@ const Footer = () => {
           <F.Column className={column}>
             <h4>Informacje</h4>
             <div>
-              <a href="/regulation">Regulamin</a>
-              <a href="/policy">Polityka prywatności</a>
+              <a href="/">Regulamin</a>
+              <a href="/">Polityka prywatności</a>
             </div>
           </F.Column>
           <F.Column className={column}>
@@ -60,7 +58,13 @@ const Footer = () => {
             </div>
 
             <div>
-              <p>Zgłoś problem</p>
+              <a
+                href="mailto:admin@fitkids.pl"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Zgłoś problem
+              </a>
             </div>
           </F.Column>
         </F.ColumnsWrapper>
@@ -68,17 +72,5 @@ const Footer = () => {
     </F.Wrapper>
   )
 }
-
-const query = graphql`
-  {
-    file(relativePath: { regex: "/bg-footer/" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`
 
 export default Footer

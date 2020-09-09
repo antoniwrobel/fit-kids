@@ -12,7 +12,6 @@ const Hero = () => {
   }, [])
 
   const data = useStaticQuery(query)
-  console.log(data)
 
   return (
     <H.BackgroundImage
