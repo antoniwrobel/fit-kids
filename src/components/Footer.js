@@ -46,7 +46,7 @@ const Footer = () => {
               <Link to="/kontakt">Kontakt</Link>
             </div>
           </F.Column>
-          <F.Column className={column} custom>
+          <F.Column className={column}>
             <h4>Kontakt</h4>
             <div>
               <p>
