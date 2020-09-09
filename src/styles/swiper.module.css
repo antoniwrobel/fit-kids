@@ -34,6 +34,14 @@
   font-weight: 400;
 }
 
+.bgImgCustom {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-reapeat;
+  margin: 0 auto;
+  min-height: 780px;
+}
 @media (max-width: 1029px) {
   .content {
     max-width: 100%;
@@ -56,5 +64,9 @@
   .paragraph {
     margin: 20px 0;
     font-size: 20px;
+  }
+
+  .bgImgCustom {
+    min-height: 450px;
   }
 }

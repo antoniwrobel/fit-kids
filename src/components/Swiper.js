@@ -8,6 +8,7 @@ import {
   paragraph,
   header,
   headerSmall,
+  bgImgCustom,
 } from "../styles/swiper.module.css"
 import * as H from "../styled/Home/styles"
 
@@ -93,6 +94,7 @@ const Swiper = () => {
                     fluid={node.childImageSharp.fluid}
                     alt="background image"
                     indexPage
+                    className={bgImgCustom}
                   />
 
                   <H.Content className={content}>
@@ -119,6 +121,7 @@ const Swiper = () => {
                     fluid={node.childImageSharp.fluid}
                     alt="background image"
                     indexPage
+                    className={bgImgCustom}
                   />
 
                   <H.Content className={content}>

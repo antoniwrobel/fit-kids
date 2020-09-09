@@ -17,17 +17,7 @@ export const Headers = styled.div``
 
 export const Header = styled.div``
 
-export const BackgroundImageCustom = styled(Image)`
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-reapeat;
-  margin: 0 auto;
-  min-height: 780px;
-  @media (max-width: 1019px) {
-    min-height: 450px;
-  }
-`
+export const BackgroundImageCustom = styled(Image)``
 
 export const Content = styled.div``
 
