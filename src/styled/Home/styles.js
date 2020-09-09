@@ -24,6 +24,9 @@ export const BackgroundImageCustom = styled(Image)`
   background-repeat: no-reapeat;
   margin: 0 auto;
   min-height: 780px;
+  @media (max-width: 1019px) {
+    min-height: 450px;
+  }
 `
 
 export const Content = styled.div``

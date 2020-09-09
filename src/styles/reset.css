@@ -207,7 +207,6 @@ main .swiper-button-next::after {
 @media (max-width: 1019px) {
   .gatsby-image-wrapper {
     max-width: 100%;
-    max-height: 450px;
   }
 
   .gallery-swiper {
