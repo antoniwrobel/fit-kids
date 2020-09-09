@@ -44,11 +44,17 @@
     box-sizing: border-box;
   }
 
+  .header {
+    font-size: 52px;
+  }
+
   .headerSmall {
     margin-left: 0;
+    font-size: 48px;
   }
 
   .paragraph {
     margin: 20px 0;
+    font-size: 20px;
   }
 }
