@@ -24,11 +24,11 @@ const slogan = [
   ],
   [
     {
-      first: "Najlepszy catering",
-      second: "dla najmlodszych",
-      color: "#9d1c2e",
+      first: "Gwarancja",
+      second: "satysfakcji",
+      color: "#21fef5",
       desc:
-        "Dostarczamy zdrowe i smaczne posiłki do żłobków, przedszkoli oraz szkół na terenie Łukowa i okolic.",
+        "Gwarantujemy pełną satysfakcję z naszych usług, popartą doświadczeniem oraz kompetencjami.",
     },
   ],
   [
@@ -42,11 +42,11 @@ const slogan = [
   ],
   [
     {
-      first: "Gwarancja",
-      second: "satysfakcji",
-      color: "#21fef5",
+      first: "Najlepszy catering",
+      second: "dla najmlodszych",
+      color: "#9d1c2e",
       desc:
-        "Gwarantujemy pełną satysfakcję z naszych usług, popartą doświadczeniem oraz kompetencjami.",
+        "Dostarczamy zdrowe i smaczne posiłki do żłobków, przedszkoli oraz szkół na terenie Łukowa i okolic.",
     },
   ],
   [
