@@ -14,24 +14,24 @@ import * as H from "../styled/Home/styles"
 
 const slogan = [
   [
-    [
-      {
-        first: "Zdrowie",
-        second: "przede wszystkim",
-        color: "#482249",
-        desc:
-          "Przykładamy dużą wagę do tego, aby wydawane przez nas posiłki przygotowywane były wyłącznie ze świeżych produktów.",
-      },
-    ],
-    [
-      {
-        first: "Gwarancja",
-        second: "satysfakcji",
-        color: "#21fef5",
-        desc:
-          "Gwarantujemy pełną satysfakcję z naszych usług, popartą doświadczeniem oraz kompetencjami.",
-      },
-    ],
+    {
+      first: "Zdrowie",
+      second: "przede wszystkim",
+      color: "#482249",
+      desc:
+        "Przykładamy dużą wagę do tego, aby wydawane przez nas posiłki przygotowywane były wyłącznie ze świeżych produktów.",
+    },
+  ],
+  [
+    {
+      first: "Gwarancja",
+      second: "satysfakcji",
+      color: "#21fef5",
+      desc:
+        "Gwarantujemy pełną satysfakcję z naszych usług, popartą doświadczeniem oraz kompetencjami.",
+    },
+  ],
+  [
     {
       first: "Pelen",
       second: "profesjonalizm",
@@ -39,24 +39,24 @@ const slogan = [
       desc:
         "Doświadczenie naszych pracowników sprawia, że współpraca z nami to czysta przyjemność.",
     },
-    [
-      {
-        first: "Darmowe napoje",
-        second: "do posilkow",
-        color: "#1b569c",
-        desc:
-          "Do każdego posiłku dodajemy w gratisie napój, zgodnie z ustalonym menu.",
-      },
-    ],
-    [
-      {
-        first: "Najlepszy catering",
-        second: "dla najmlodszych",
-        color: "#9d1c2e",
-        desc:
-          "Dostarczamy zdrowe i smaczne posiłki do żłobków, przedszkoli oraz szkół na terenie Łukowa i okolic.",
-      },
-    ],
+  ],
+  [
+    {
+      first: "Darmowe napoje",
+      second: "do posilkow",
+      color: "#1b569c",
+      desc:
+        "Do każdego posiłku dodajemy w gratisie napój, zgodnie z ustalonym menu.",
+    },
+  ],
+  [
+    {
+      first: "Najlepszy catering",
+      second: "dla najmlodszych",
+      color: "#9d1c2e",
+      desc:
+        "Dostarczamy zdrowe i smaczne posiłki do żłobków, przedszkoli oraz szkół na terenie Łukowa i okolic.",
+    },
   ],
 ]
 
