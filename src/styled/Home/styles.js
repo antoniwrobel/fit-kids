@@ -15,7 +15,9 @@ export const HeroSlider = styled.div``
 
 export const Headers = styled.div``
 
-export const Header = styled.div``
+export const Header = styled.div`
+  color: ${({ color }) => color || "#fff"};
+`
 
 export const BackgroundImageCustom = styled(Image)``
 

@@ -15,8 +15,9 @@ import * as H from "../styled/Home/styles"
 const slogan = [
   [
     {
-      first: "Pełen",
+      first: "Pelen",
       second: "profesjonalizm",
+      color: "#971e51",
       desc:
         "Doświadczenie naszych pracowników sprawia, że współpraca z nami to czysta przyjemność.",
     },
@@ -24,7 +25,8 @@ const slogan = [
   [
     {
       first: "Najlepszy catering",
-      second: "dla najmłodszych",
+      second: "dla najmlodszych",
+      color: "#9d1c2e",
       desc:
         "Dostarczamy zdrowe i smaczne posiłki do żłobków, przedszkoli oraz szkół na terenie Łukowa i okolic.",
     },
@@ -33,6 +35,7 @@ const slogan = [
     {
       first: "Zdrowie",
       second: "przede wszystkim",
+      color: "#482249",
       desc:
         "Przykładamy dużą wagę do tego, aby wydawane przez nas posiłki przygotowywane były wyłącznie ze świeżych produktów.",
     },
@@ -41,6 +44,7 @@ const slogan = [
     {
       first: "Gwarancja",
       second: "satysfakcji",
+      color: "#21fef5",
       desc:
         "Gwarantujemy pełną satysfakcję z naszych usług, popartą doświadczeniem oraz kompetencjami.",
     },
@@ -48,7 +52,8 @@ const slogan = [
   [
     {
       first: "Darmowe napoje",
-      second: "do posiłków",
+      second: "do posilkow",
+      color: "#1b569c",
       desc:
         "Do każdego posiłku dodajemy w gratisie napój, zgodnie z ustalonym menu.",
     },
@@ -102,7 +107,10 @@ const Swiper = () => {
                       <H.Header className={header}>
                         {slogan[index][0].first}
                       </H.Header>
-                      <H.Header className={headerSmall}>
+                      <H.Header
+                        className={headerSmall}
+                        color={slogan[index][0].color}
+                      >
                         {slogan[index][0].second}
                       </H.Header>
                     </H.Headers>
@@ -129,7 +137,10 @@ const Swiper = () => {
                       <H.Header className={header}>
                         {slogan[index][0].first}
                       </H.Header>
-                      <H.Header className={headerSmall}>
+                      <H.Header
+                        className={headerSmall}
+                        color={slogan[index][0].color}
+                      >
                         {slogan[index][0].second}
                       </H.Header>
                     </H.Headers>
