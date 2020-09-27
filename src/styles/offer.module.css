@@ -9,18 +9,15 @@
 
 .wrapperSpecial {
   max-width: 1200px;
-  margin: 0 auto;
   min-height: 55px;
-  padding: 40px 30px;
+  padding: 40px 0px;
   box-sizing: border-box;
 }
 
 .wrapperUpper {
   max-width: 1200px;
-  margin: 0 auto;
   min-height: 55px;
-  padding: 40px 30px;
-
+  padding: 40px 0px;
   box-sizing: border-box;
   max-width: 50%;
 }
@@ -83,6 +80,8 @@
 }
 
 .headerWrap {
+  padding: 0 30px;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   max-width: 1200px;
@@ -98,7 +97,12 @@
   .wrapper {
     padding: 10px 10px;
   }
+
+  .headerWrap {
+    padding: 0;
+  }
   .wrapperUpper {
+    padding: 20px 10px;
     max-width: 100%;
   }
 
