@@ -11,11 +11,17 @@ import Footer from "../components/Footer"
 import * as J from "../styled/Offer/styles"
 import {
   wrapper,
+  wrapperUpper,
   item,
   dayClass,
+  center,
+  headerWrap,
+  wrapperSpecial,
   dateClass,
   desc as descClass,
 } from "../styles/offer.module.css"
+
+import notes from "../images/notes.png"
 
 const description = [
   {
@@ -39,28 +45,36 @@ const MenuPage = ({
     <Layout>
       <SEO title="Fitkids | jadłospis" />
       <Hero />
-      <J.Wrapper className={wrapper}>
-        <h2>Aktualny jadłospis</h2>
-        <J.Descriptions>
-          {description.map(({ id, desc }) => {
-            return (
-              <J.Desc
-                key={id}
-                dangerouslySetInnerHTML={createDesc(desc)}
-                className={descClass}
-              />
-            )
-          })}
-        </J.Descriptions>
-      </J.Wrapper>
+
+      <div className={headerWrap}>
+        <J.Wrapper className={wrapperUpper}>
+          <h2>Aktualny jadłospis</h2>
+          <J.Descriptions>
+            {description.map(({ id, desc }) => {
+              return (
+                <J.Desc
+                  key={id}
+                  dangerouslySetInnerHTML={createDesc(desc)}
+                  className={descClass}
+                />
+              )
+            })}
+          </J.Descriptions>
+        </J.Wrapper>
+        <J.Wrapper className={wrapperSpecial}>
+          <img src={notes} alt="notes" style={{ maxWidth: "220px" }} />
+        </J.Wrapper>
+      </div>
 
       <J.Wrapper className={wrapper}>
         <ul>
           {nodes.map(({ day, breakfast, date, dinner, tea }) => {
             return (
               <li key={day}>
-                <span className={dayClass}>{day}</span>
-                <span className={dateClass}>- {date}</span>
+                <div className={center}>
+                  <span className={dayClass}>{day}</span>
+                  <span className={dateClass}>- {date}</span>
+                </div>
                 <ul className={item}>
                   <li>
                     <strong>Śniadanie:</strong>

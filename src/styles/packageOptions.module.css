@@ -18,12 +18,12 @@
 }
 
 .header {
-  width: 100%;
+  width: calc(100% + 6px);
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 30px;
+  border-radius: 35px;
   border-top: 9px solid #333;
   font-size: 45px;
   font-weight: 700;

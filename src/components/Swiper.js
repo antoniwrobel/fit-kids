@@ -3,6 +3,10 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import SwiperElement from "react-id-swiper"
 
+import SwiperCore, { Thumbs, Navigation, Pagination } from "swiper"
+
+import { Swiper as SWP, SwiperSlide } from "swiper/react"
+
 import {
   content,
   paragraph,
@@ -11,6 +15,13 @@ import {
   bgImgCustom,
 } from "../styles/swiper.module.css"
 import * as H from "../styled/Home/styles"
+
+import "swiper/swiper-bundle.css"
+import "swiper/components/navigation/navigation.scss"
+import "swiper/components/pagination/pagination.scss"
+import "swiper/components/scrollbar/scrollbar.scss"
+
+SwiperCore.use([Navigation])
 
 const slogan = [
   [
@@ -75,10 +86,8 @@ const Swiper = () => {
         el: ".swiper-pagination",
         clickable: true,
       },
-      observer: true,
-      observeParents: true,
       loop: true,
-      navigation: !mobile && {
+      navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
@@ -87,43 +96,47 @@ const Swiper = () => {
 
   const data = useStaticQuery(query)
 
+  if (!Object.keys(params).length > 0) return <></>
+
   return (
     <H.Wrapper>
-      <SwiperElement {...params}>
+      <SWP {...params} navigation>
         {mobile
           ? data.mobileImage.nodes.map((node, index) => {
               return (
-                <H.HeroSlider key={index}>
-                  <H.BackgroundImageCustom
-                    fluid={node.childImageSharp.fluid}
-                    alt="background image"
-                    indexPage
-                    className={bgImgCustom}
-                  />
+                <SwiperSlide key={index}>
+                  <H.HeroSlider>
+                    <H.BackgroundImageCustom
+                      fluid={node.childImageSharp.fluid}
+                      alt="background image"
+                      indexPage
+                      className={bgImgCustom}
+                    />
 
-                  <H.Content className={content}>
-                    <H.Headers>
-                      <H.Header className={header}>
-                        {slogan[index][0].first}
-                      </H.Header>
-                      <H.Header
-                        className={headerSmall}
-                        color={slogan[index][0].color}
-                      >
-                        {slogan[index][0].second}
-                      </H.Header>
-                    </H.Headers>
+                    <H.Content className={content}>
+                      <H.Headers>
+                        <H.Header className={header}>
+                          {slogan[index][0].first}
+                        </H.Header>
+                        <H.Header
+                          className={headerSmall}
+                          color={slogan[index][0].color}
+                        >
+                          {slogan[index][0].second}
+                        </H.Header>
+                      </H.Headers>
 
-                    <H.Paragraph className={paragraph}>
-                      {slogan[index][0].desc}
-                    </H.Paragraph>
-                  </H.Content>
-                </H.HeroSlider>
+                      <H.Paragraph className={paragraph}>
+                        {slogan[index][0].desc}
+                      </H.Paragraph>
+                    </H.Content>
+                  </H.HeroSlider>
+                </SwiperSlide>
               )
             })
           : data.desktopImage.nodes.map((node, index) => {
               return (
-                <H.HeroSlider key={index}>
+                <SwiperSlide key={index}>
                   <H.BackgroundImageCustom
                     fluid={node.childImageSharp.fluid}
                     alt="background image"
@@ -148,10 +161,10 @@ const Swiper = () => {
                       {slogan[index][0].desc}
                     </H.Paragraph>
                   </H.Content>
-                </H.HeroSlider>
+                </SwiperSlide>
               )
             })}
-      </SwiperElement>
+      </SWP>
     </H.Wrapper>
   )
 }

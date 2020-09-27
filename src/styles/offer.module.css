@@ -3,8 +3,26 @@
   margin: 0 auto;
   min-height: 55px;
   padding: 40px 30px;
-  border-bottom: 3px solid #efeeee;
+
   box-sizing: border-box;
+}
+
+.wrapperSpecial {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 55px;
+  padding: 40px 30px;
+  box-sizing: border-box;
+}
+
+.wrapperUpper {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 55px;
+  padding: 40px 30px;
+
+  box-sizing: border-box;
+  max-width: 50%;
 }
 
 .wrapper h2 {
@@ -12,6 +30,10 @@
   font-size: 62px;
   font-family: "Saira Semi Condensed";
   font-weight: 700;
+}
+
+.center {
+  text-align: center;
 }
 
 .details {
@@ -60,6 +82,14 @@
   font-weight: 600;
 }
 
+.headerWrap {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-bottom: 3px solid #efeeee;
+}
+
 .dateClass {
   font-size: 28px;
 }
@@ -67,6 +97,13 @@
 @media (max-width: 1019px) {
   .wrapper {
     padding: 10px 10px;
+  }
+  .wrapperUpper {
+    max-width: 100%;
+  }
+
+  .wrapperSpecial {
+    display: none;
   }
 
   .wrapper h2 {

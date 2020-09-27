@@ -64,7 +64,7 @@ const ContactPage = () => {
             </div>
             <div>
               <p>NIP: 825-218-14-07</p>
-              <p>REGON:368952591</p>
+              <p>REGON: 368952592</p>
             </div>
           </K.Detail>
           <K.Detail className={detail}>

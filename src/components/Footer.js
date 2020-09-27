@@ -25,8 +25,8 @@ const Footer = () => {
             </div>
 
             <div>
-              <p>NIP: 825-218-17-07</p>
-              <p>REGON: 368952598</p>
+              <p>NIP: 825-218-14-07</p>
+              <p>REGON: 368952592</p>
             </div>
           </F.Column>
           <F.Column className={column}>
