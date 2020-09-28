@@ -13,6 +13,7 @@ import {
   header,
   headerSmall,
   bgImgCustom,
+  mainWrapper,
 } from "../styles/swiper.module.css"
 import * as H from "../styled/Home/styles"
 
@@ -96,10 +97,10 @@ const Swiper = () => {
 
   const data = useStaticQuery(query)
 
-  if (!Object.keys(params).length > 0) return <></>
+  if (!Object.keys(params).length > 0) return <div className={mainWrapper} />
 
   return (
-    <H.Wrapper>
+    <div className={mainWrapper}>
       <SWP {...params} navigation>
         {mobile
           ? data.mobileImage.nodes.map((node, index) => {
@@ -165,7 +166,7 @@ const Swiper = () => {
               )
             })}
       </SWP>
-    </H.Wrapper>
+    </div>
   )
 }
 

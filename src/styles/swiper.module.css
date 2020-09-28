@@ -1,3 +1,8 @@
+.mainWrapper {
+  min-height: 780px;
+  width: 100%;
+}
+
 .content {
   position: absolute;
   top: 255px;
@@ -42,7 +47,12 @@
   margin: 0 auto;
   min-height: 780px;
 }
+
 @media (max-width: 1029px) {
+  .mainWrapper {
+    min-height: 550px;
+  }
+
   .content {
     max-width: 100%;
     top: 50px;
